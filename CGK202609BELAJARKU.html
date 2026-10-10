@@ -1,0 +1,2734 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BelajarKU - 2.000+ Worksheet Anak Edukatif Usia 5+ Tahun</title>
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* CSS THEME VARIABLES */
+    :root {
+      --primary-color: #FF6B8B;
+      --primary-hover: #ff5277;
+      --secondary-color: #FFA45B;
+      --accent-color: #FFDE59;
+      --bg-body: #FFFDF9;
+      --bg-pattern-dot1: #FFE5B4;
+      --bg-pattern-dot2: #CDE9FE;
+      --card-bg: #FFFFFF;
+      --card-border: #F1ECE4;
+      --card-inner-bg: #FAF8F5;
+      --text-main: #2C3E50;
+      --text-muted: #64748B;
+      --header-bg: rgba(255, 255, 255, 0.95);
+      --header-border: #FFE3E3;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+      --shadow-hover: 0 14px 28px rgba(0, 0, 0, 0.12);
+      --btn-3d-shadow: 0 4px 0 #d94b6a;
+    }
+
+    /* THEME: BLUE */
+    [data-theme="blue"] {
+      --primary-color: #3A86FF;
+      --primary-hover: #2671e8;
+      --secondary-color: #00BBF9;
+      --accent-color: #FFE600;
+      --bg-body: #F4F9FF;
+      --bg-pattern-dot1: #CFE2FE;
+      --bg-pattern-dot2: #BEE3F8;
+      --card-inner-bg: #F0F6FF;
+      --card-border: #DCE8F8;
+      --header-border: #D0E1FD;
+      --btn-3d-shadow: 0 4px 0 #1e62cf;
+    }
+
+    /* THEME: GREEN */
+    [data-theme="green"] {
+      --primary-color: #38B000;
+      --primary-hover: #2d9200;
+      --secondary-color: #70E000;
+      --accent-color: #FFDD00;
+      --bg-body: #F7FCF5;
+      --bg-pattern-dot1: #D2F5C5;
+      --bg-pattern-dot2: #C3E9BF;
+      --card-inner-bg: #F2FAEE;
+      --card-border: #D7EED0;
+      --header-border: #C8EAC0;
+      --btn-3d-shadow: 0 4px 0 #247500;
+    }
+
+    /* THEME: YELLOW */
+    [data-theme="yellow"] {
+      --primary-color: #F77F00;
+      --primary-hover: #d66c00;
+      --secondary-color: #FCBF49;
+      --accent-color: #FFE600;
+      --bg-body: #FFFDF4;
+      --bg-pattern-dot1: #FFE9AA;
+      --bg-pattern-dot2: #FFDE59;
+      --card-inner-bg: #FFFBF0;
+      --card-border: #F7E5C4;
+      --header-border: #FCE8B3;
+      --btn-3d-shadow: 0 4px 0 #bd5f00;
+    }
+
+    /* THEME: PURPLE */
+    [data-theme="purple"] {
+      --primary-color: #8338EC;
+      --primary-hover: #6e27d3;
+      --secondary-color: #C77DFF;
+      --accent-color: #FFB703;
+      --bg-body: #FAF6FF;
+      --bg-pattern-dot1: #E4D3FD;
+      --bg-pattern-dot2: #D3B9FD;
+      --card-inner-bg: #F7F0FF;
+      --card-border: #E8DBF8;
+      --header-border: #E1CCFA;
+      --btn-3d-shadow: 0 4px 0 #591ab9;
+    }
+
+    /* THEME: DARK MODE */
+    [data-theme="dark"] {
+      --primary-color: #FF758F;
+      --primary-hover: #ff5277;
+      --secondary-color: #FFB703;
+      --accent-color: #00BBF9;
+      --bg-body: #121826;
+      --bg-pattern-dot1: #232B3E;
+      --bg-pattern-dot2: #1B2232;
+      --card-bg: #1E2638;
+      --card-border: #2E384D;
+      --card-inner-bg: #182030;
+      --text-main: #F1F5F9;
+      --text-muted: #94A3B8;
+      --header-bg: rgba(22, 29, 44, 0.95);
+      --header-border: #2D3748;
+      --btn-3d-shadow: 0 4px 0 #a8324a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(var(--bg-pattern-dot1) 1.5px, transparent 1.5px),
+        radial-gradient(var(--bg-pattern-dot2) 1.5px, transparent 1.5px);
+      background-size: 36px 36px;
+      background-position: 0 0, 18px 18px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--header-bg);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+      border-bottom: 3px solid var(--header-border);
+      transition: all 0.3s ease;
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      font-family: 'Fredoka', cursive;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--primary-color);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .logo-badge {
+      background: var(--accent-color);
+      color: #523e00;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 800;
+    }
+
+    /* THEME SWITCHER CONTROLS */
+    .theme-switcher-box {
+      display: flex;
+      align-items: center;
+      background: var(--card-bg);
+      padding: 5px 12px;
+      border-radius: 50px;
+      border: 2px solid var(--card-border);
+      box-shadow: var(--shadow-sm);
+      gap: 8px;
+    }
+
+    .theme-label {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-right: 4px;
+    }
+
+    .theme-dot-btn {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      cursor: pointer;
+      outline: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .theme-dot-btn:hover {
+      transform: scale(1.22);
+    }
+
+    .theme-dot-btn.active {
+      box-shadow: 0 0 0 3px var(--primary-color);
+      transform: scale(1.15);
+    }
+
+    .dot-pink   { background: #FF6B8B; }
+    .dot-blue   { background: #3A86FF; }
+    .dot-green  { background: #38B000; }
+    .dot-yellow { background: #F77F00; }
+    .dot-purple { background: #8338EC; }
+    .dot-dark   { 
+      background: #1e2638; 
+      color: #f7df1e; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      font-size: 11px; 
+    }
+
+    /* HERO SECTION */
+    .hero {
+      padding: 35px 20px 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero-split-card {
+      background: var(--card-bg);
+      border: 2px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 30px 40px;
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      align-items: center;
+      gap: 30px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 107, 139, 0.12);
+      color: var(--primary-color);
+      border: 1.5px dashed var(--primary-color);
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .hero-title {
+      font-family: 'Fredoka', cursive;
+      font-size: 34px;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+
+    /* COLORFUL WORD STYLING */
+    .c-pink   { color: #FF6B8B; }
+    .c-orange { color: #FFA45B; }
+    .c-yellow { color: #F7B801; }
+    .c-green  { color: #38B000; }
+    .c-blue   { color: #3A86FF; }
+    .c-purple { color: #8338EC; }
+
+    .hero-desc {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 18px;
+    }
+
+    .hero-desc strong {
+      color: var(--text-main);
+    }
+
+    .hero-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill-tag {
+      background: var(--card-inner-bg);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12.5px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+    }
+
+    /* HERO ANIMATION GRAPHICS */
+    .hero-illustration {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .art-scene {
+      position: relative;
+      width: 100%;
+      max-width: 280px;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255, 222, 89, 0.25), rgba(78, 168, 222, 0.2));
+      border-radius: 30px;
+      border: 3px dashed var(--header-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .art-center-bubble {
+      width: 105px;
+      height: 105px;
+      border-radius: 50%;
+      background: var(--card-bg);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-color);
+      font-size: 38px;
+      animation: floatCenter 3.5s ease-in-out infinite;
+      z-index: 2;
+    }
+
+    .art-center-bubble span {
+      font-family: 'Fredoka', cursive;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-top: 4px;
+    }
+
+    .floating-sticker {
+      position: absolute;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+      color: #fff;
+    }
+
+    .st-pencil {
+      top: 15px; left: 15px;
+      width: 48px; height: 48px;
+      background: #FFA45B;
+      font-size: 20px;
+      animation: floatPencil 4s ease-in-out infinite;
+    }
+
+    .st-palette {
+      bottom: 20px; left: 25px;
+      width: 52px; height: 52px;
+      background: #FF6B8B;
+      font-size: 22px;
+      animation: floatPalette 3.8s ease-in-out infinite;
+    }
+
+    .st-puzzle {
+      top: 20px; right: 20px;
+      width: 46px; height: 46px;
+      background: #3A86FF;
+      font-size: 20px;
+      animation: floatPuzzle 4.2s ease-in-out infinite;
+    }
+
+    .st-star {
+      bottom: 20px; right: 25px;
+      width: 44px; height: 44px;
+      background: #FFD166;
+      font-size: 20px;
+      color: #925400;
+      animation: floatStar 3.2s ease-in-out infinite;
+    }
+
+    @keyframes floatCenter {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(2deg); }
+    }
+    @keyframes floatPencil {
+      0%, 100% { transform: translateY(0) rotate(-10deg); }
+      50% { transform: translateY(-12px) rotate(5deg); }
+    }
+    @keyframes floatPalette {
+      0%, 100% { transform: translateY(0) rotate(8deg); }
+      50% { transform: translateY(-10px) rotate(-6deg); }
+    }
+    @keyframes floatPuzzle {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-12px) scale(1.08); }
+    }
+    @keyframes floatStar {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(25deg); }
+    }
+
+    /* FILTER SECTION */
+    .filter-wrapper {
+      max-width: 1200px;
+      margin: 20px auto 10px;
+      padding: 0 20px;
+    }
+
+    .search-bar-box {
+      max-width: 550px;
+      margin: 0 auto 20px;
+      position: relative;
+    }
+
+    .search-bar-box input {
+      width: 100%;
+      padding: 13px 18px 13px 48px;
+      border: 2px solid var(--card-border);
+      border-radius: 50px;
+      font-size: 15px;
+      font-family: 'Nunito', sans-serif;
+      outline: none;
+      transition: all 0.3s;
+      background: var(--card-bg);
+      color: var(--text-main);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .search-bar-box input:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 4px rgba(255, 107, 139, 0.2);
+    }
+
+    .search-bar-box i {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 17px;
+    }
+
+    .filter-instructions {
+      text-align: center;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .category-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 30px;
+    }
+
+    .cat-btn {
+      background: var(--card-bg);
+      border: 2px solid var(--card-border);
+      padding: 7px 16px;
+      border-radius: 30px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: all 0.22s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .cat-btn:hover {
+      border-color: var(--primary-color);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .cat-btn.active {
+      background: var(--primary-color) !important;
+      border-color: var(--primary-color) !important;
+      color: #ffffff !important;
+      box-shadow: 0 5px 14px rgba(0,0,0,0.18);
+      transform: translateY(-2px) scale(1.03);
+    }
+
+    .cat-btn.active i {
+      color: #ffffff !important;
+    }
+
+    /* CONTENT GRID */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 50px;
+    }
+
+    .category-section {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 26px 30px;
+      margin-bottom: 35px;
+      box-shadow: var(--shadow-sm);
+      border: 2px solid var(--card-border);
+      border-top: 6px solid var(--primary-color);
+      animation: fadeInSection 0.35s ease;
+      display: none; /* Default tersembunyi, hanya muncul saat diklik */
+    }
+
+    .category-section.section-active {
+      display: block;
+    }
+
+    @keyframes fadeInSection {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .cat-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 22px;
+      padding-bottom: 12px;
+      border-bottom: 2px dashed var(--card-border);
+    }
+
+    .cat-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .cat-icon-badge {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      color: #fff;
+    }
+
+    .cat-title {
+      font-family: 'Fredoka', cursive;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .cat-count {
+      background: var(--card-inner-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      font-size: 12.5px;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+
+    .items-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    /* WORKSHEET CARD DESIGN (LEBIH MENARIK & COLORFUL) */
+    .worksheet-card {
+      background: var(--card-inner-bg);
+      border: 2px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 18px 22px 18px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 148px;
+      overflow: hidden;
+      transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    }
+
+    .worksheet-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 18px 20px, rgba(255,255,255,0.85) 0 4px, transparent 5px),
+        radial-gradient(circle at 54px 58px, rgba(255,255,255,0.58) 0 3px, transparent 4px),
+        radial-gradient(circle at calc(100% - 72px) calc(100% - 26px), rgba(255,255,255,0.75) 0 5px, transparent 6px),
+        linear-gradient(90deg, rgba(255,255,255,0.5), transparent 42%);
+      opacity: 0.75;
+      pointer-events: none;
+    }
+
+    .worksheet-card::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 18px;
+      bottom: 18px;
+      width: 7px;
+      border-radius: 0 12px 12px 0;
+      background: var(--primary-color);
+      opacity: 0.75;
+      pointer-events: none;
+    }
+
+    .worksheet-title,
+    .btn-download,
+    .card-num {
+      position: relative;
+      z-index: 1;
+    }
+
+    .worksheet-card:hover {
+      transform: translateY(-5px);
+      background: var(--card-bg);
+      border-color: var(--primary-color);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-bottom: 4px;
+      min-height: 28px;
+      position: relative;
+    }
+
+    .card-top::before {
+      content: "\f005  \f303  \f06b";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: 8px;
+      color: var(--primary-color);
+      opacity: 0.42;
+      transform-origin: left center;
+      animation: cardSparkle 2.8s ease-in-out infinite;
+    }
+
+    /* REPLACED PDF TAG WITH CUTE ILLUSTRATIVE ICON BADGE */
+    .card-illustrative-icon {
+      width: 150px;
+      height: 150px;
+      border-radius: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 68px;
+      color: #ffffff;
+      box-shadow: none;
+      opacity: 0.13;
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      z-index: 0;
+      pointer-events: none;
+      transform: translateY(-50%) rotate(-8deg);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      animation: cardIconFloat 4.2s ease-in-out infinite;
+    }
+
+    .worksheet-card:hover .card-illustrative-icon {
+      opacity: 0.18;
+      transform: translateY(-50%) scale(1.04) rotate(-4deg);
+    }
+
+    .card-num {
+      font-family: 'Fredoka', cursive;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: var(--card-bg);
+      padding: 5px 11px;
+      border-radius: 20px;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    }
+
+    .worksheet-title {
+      font-family: 'Fredoka', cursive;
+      font-size: 20px;
+      color: var(--text-main);
+      margin-bottom: 16px;
+      line-height: 1.35;
+      max-width: calc(100% - 120px);
+    }
+
+    .worksheet-title::after {
+      content: "Aktivitas belajar siap dibuka";
+      display: block;
+      width: max-content;
+      max-width: 100%;
+      margin-top: 8px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.72);
+      border: 1px dashed var(--card-border);
+      color: var(--text-muted);
+      font-family: 'Nunito', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--primary-color);
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 13.5px;
+      transition: all 0.2s ease;
+      box-shadow: var(--btn-3d-shadow);
+      border: none;
+      cursor: pointer;
+      align-self: flex-start;
+      min-width: 176px;
+    }
+
+    @keyframes cardIconFloat {
+      0%, 100% {
+        margin-top: 0;
+      }
+      50% {
+        margin-top: -8px;
+      }
+    }
+
+    @keyframes cardSparkle {
+      0%, 100% {
+        opacity: 0.32;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.62;
+        transform: scale(1.08);
+      }
+    }
+
+    .btn-download:hover {
+      filter: brightness(1.08);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 0 rgba(0,0,0,0.15);
+    }
+
+    .btn-download:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 rgba(0,0,0,0.15);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--card-bg);
+      border-top: 3px solid var(--header-border);
+      padding: 40px 20px 26px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .footer-brand {
+      font-family: 'Fredoka', cursive;
+      font-size: 26px;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    .footer-text {
+      max-width: 600px;
+      margin: 0 auto 18px;
+      color: var(--text-muted);
+      font-size: 14.5px;
+      line-height: 1.5;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--card-border);
+      padding-top: 18px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* BACK TO TOP */
+    .back-to-top {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      width: 44px;
+      height: 44px;
+      background: var(--primary-color);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+      transition: 0.3s;
+      z-index: 999;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-3px) scale(1.06);
+    }
+
+    @media (max-width: 860px) {
+      .items-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-split-card {
+        grid-template-columns: minmax(0, 1.15fr) minmax(115px, 0.85fr);
+        gap: 14px;
+        padding: 20px;
+      }
+      .hero-illustration {
+        height: 165px;
+      }
+      .hero-title {
+        font-size: 27px;
+      }
+      .hero-desc {
+        font-size: 13.5px;
+      }
+      .hero-badge {
+        font-size: 11.5px;
+        padding: 5px 10px;
+      }
+      .pill-tag {
+        font-size: 11.5px;
+        padding: 5px 9px;
+      }
+      .navbar {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero {
+        padding: 20px 12px 18px;
+      }
+      .hero-split-card {
+        grid-template-columns: minmax(0, 1.2fr) minmax(92px, 0.8fr);
+        gap: 10px;
+        padding: 16px;
+      }
+      .hero-title {
+        font-size: 21px;
+      }
+      .hero-desc {
+        font-size: 12.5px;
+        margin-bottom: 12px;
+      }
+      .hero-features {
+        gap: 5px;
+      }
+      .pill-tag {
+        font-size: 10.5px;
+        padding: 4px 7px;
+      }
+      .hero-illustration {
+        height: 130px;
+      }
+      .art-scene {
+        max-width: 130px;
+        border-radius: 20px;
+      }
+      .art-center-bubble {
+        width: 68px;
+        height: 68px;
+        font-size: 25px;
+      }
+      .art-center-bubble span {
+        font-size: 8px;
+      }
+      .floating-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="navbar">
+      <a href="#" class="logo">
+        <i class="fa-solid fa-shapes"></i> BelajarKU <span class="logo-badge">Usia 5+ Tahun</span>
+      </a>
+
+      <!-- TEMA SWITCHER (CATATAN MS WORD) -->
+      <div class="theme-switcher-box" title="Pilih Tema Warna Website">
+        <span class="theme-label"><i class="fa-solid fa-palette"></i> Tema:</span>
+        <button class="theme-dot-btn dot-pink active" title="Tema Pink" onclick="setTheme('pink', this)"></button>
+        <button class="theme-dot-btn dot-blue" title="Tema Biru" onclick="setTheme('blue', this)"></button>
+        <button class="theme-dot-btn dot-green" title="Tema Hijau" onclick="setTheme('green', this)"></button>
+        <button class="theme-dot-btn dot-yellow" title="Tema Kuning" onclick="setTheme('yellow', this)"></button>
+        <button class="theme-dot-btn dot-purple" title="Tema Ungu" onclick="setTheme('purple', this)"></button>
+        <button class="theme-dot-btn dot-dark" title="Dark Mode" onclick="setTheme('dark', this)">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION COLORFUL & COMPACT DENGAN ANIMASI SAMPING -->
+  <section class="hero">
+    <div class="hero-split-card">
+      <div class="hero-info">
+        <div class="hero-badge">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> 2.000+ Worksheet Anak Super Lengkap 🌈
+        </div>
+        <h1 class="hero-title">
+          <span class="c-pink">Belajar</span><span class="c-purple">KU</span>: 
+          <span class="c-orange">Aktivitas</span> 
+          <span class="c-yellow">Edukatif</span> &amp; 
+          <span class="c-blue">Ceria</span> 
+          <span class="c-green">Anak 5+ Tahun</span>
+        </h1>
+        <p class="hero-desc">
+          Temukan aktivitas edukatif menyenangkan untuk anak usia 5 tahun hingga SD: mewarnai, berhitung, membaca, menulis, puzzle, logika &amp; kreativitas.<br>
+          <strong>Belajar jadi lebih seru, anak aktif, dan orang tua selalu punya ide seru setiap hari!</strong>
+        </p>
+
+        <div class="hero-features">
+          <div class="pill-tag"><i class="fa-solid fa-print c-pink"></i> Siap Cetak &amp; Pakai</div>
+          <div class="pill-tag"><i class="fa-solid fa-brain c-purple"></i> Asah Logika</div>
+          <div class="pill-tag"><i class="fa-solid fa-palette c-orange"></i> Kreativitas</div>
+          <div class="pill-tag"><i class="fa-solid fa-face-smile c-green"></i> Ramah Anak SD</div>
+        </div>
+      </div>
+
+      <!-- ANIMASI SAMPING MELAMBANGKAN AKTIVITAS WEB -->
+      <div class="hero-illustration">
+        <div class="art-scene">
+          <div class="art-center-bubble">
+            <i class="fa-solid fa-shapes"></i>
+            <span>Belajar &amp; Main</span>
+          </div>
+          <div class="floating-sticker st-pencil" title="Menulis & Menggambar">
+            <i class="fa-solid fa-pencil"></i>
+          </div>
+          <div class="floating-sticker st-palette" title="Mewarnai & Seni">
+            <i class="fa-solid fa-palette"></i>
+          </div>
+          <div class="floating-sticker st-puzzle" title="Logika & Puzzle">
+            <i class="fa-solid fa-puzzle-piece"></i>
+          </div>
+          <div class="floating-sticker st-star" title="Juara Belajar">
+            <i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH & CATEGORY FILTERS -->
+  <div class="filter-wrapper">
+    <div class="search-bar-box">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="searchInput" placeholder="Cari topik atau lembar worksheet..." onkeyup="filterWorksheets()">
+    </div>
+
+    <p class="filter-instructions">
+      <i class="fa-solid fa-hand-pointer"></i> Klik salah satu kategori di bawah untuk menampilkan lembar kerja:
+    </p>
+
+    <!-- TOMBOL KATEGORI SEBAGAI TAB FILTER -->
+    <div class="category-nav" id="categoryNav">
+      <button class="cat-btn active" onclick="showCategory('alphabet', this)"><i class="fa-solid fa-font" style="color: #FF6B8B;"></i> Alphabet</button>
+      <button class="cat-btn" onclick="showCategory('color', this)"><i class="fa-solid fa-palette" style="color: #FFA45B;"></i> Color</button>
+      <button class="cat-btn" onclick="showCategory('color-by-numbers', this)"><i class="fa-solid fa-brush" style="color: #FFB800;"></i> Color by numbers</button>
+      <button class="cat-btn" onclick="showCategory('connect-the-dots', this)"><i class="fa-solid fa-circle-nodes" style="color: #4EBA6F;"></i> Connect the dots</button>
+      <button class="cat-btn" onclick="showCategory('counting-game', this)"><i class="fa-solid fa-calculator" style="color: #06D6A0;"></i> Counting game</button>
+      <button class="cat-btn" onclick="showCategory('crosswords', this)"><i class="fa-solid fa-table-cells" style="color: #118AB2;"></i> Crosswords</button>
+      <button class="cat-btn" onclick="showCategory('cut-and-glue', this)"><i class="fa-solid fa-scissors" style="color: #4EA8DE;"></i> Cut and glue</button>
+      <button class="cat-btn" onclick="showCategory('drawing', this)"><i class="fa-solid fa-pen-nib" style="color: #7B2CBF;"></i> Drawing</button>
+      <button class="cat-btn" onclick="showCategory('matching-game', this)"><i class="fa-solid fa-object-ungroup" style="color: #9D4EDD;"></i> Matching game</button>
+      <button class="cat-btn" onclick="showCategory('math', this)"><i class="fa-solid fa-plus-minus" style="color: #EF476F;"></i> Math</button>
+      <button class="cat-btn" onclick="showCategory('maze-game', this)"><i class="fa-solid fa-route" style="color: #F77F00;"></i> Maze game</button>
+      <button class="cat-btn" onclick="showCategory('numbers', this)"><i class="fa-solid fa-arrow-down-1-9" style="color: #2A9D8F;"></i> Numbers</button>
+      <button class="cat-btn" onclick="showCategory('odd-one-cut', this)"><i class="fa-solid fa-puzzle-piece" style="color: #E76F51;"></i> Odd one cut</button>
+      <button class="cat-btn" onclick="showCategory('pairing-game', this)"><i class="fa-solid fa-people-arrows" style="color: #3A86FF;"></i> Pairing game</button>
+      <button class="cat-btn" onclick="showCategory('pattern', this)"><i class="fa-solid fa-cubes" style="color: #8338EC;"></i> Pattern</button>
+      <button class="cat-btn" onclick="showCategory('shadows-game', this)"><i class="fa-solid fa-cloud-moon" style="color: #4361EE;"></i> Shadows game</button>
+      <button class="cat-btn" onclick="showCategory('shapes', this)"><i class="fa-solid fa-shapes" style="color: #00BBF9;"></i> Shapes</button>
+      <button class="cat-btn" onclick="showCategory('spellings', this)"><i class="fa-solid fa-spell-check" style="color: #00F5D4;"></i> Spellings</button>
+      <button class="cat-btn" onclick="showCategory('spot-differences', this)"><i class="fa-solid fa-magnifying-glass" style="color: #FB5607;"></i> Spot differences</button>
+      <button class="cat-btn" onclick="showCategory('sudoku', this)"><i class="fa-solid fa-border-none" style="color: #FF006E;"></i> Sudoku</button>
+      <button class="cat-btn" onclick="showCategory('time', this)"><i class="fa-solid fa-clock" style="color: #8AC926;"></i> Time</button>
+      <button class="cat-btn" onclick="showCategory('trace-the-shape', this)"><i class="fa-solid fa-pencil" style="color: #1982C4;"></i> Trace the shape</button>
+      <button class="cat-btn" onclick="showCategory('word-search', this)"><i class="fa-solid fa-file-lines" style="color: #6A4C93;"></i> Word search</button>
+      <button class="cat-btn" onclick="showCategory('writing-practice', this)"><i class="fa-solid fa-marker" style="color: #D81159;"></i> Writing practice</button>
+    </div>
+  </div>
+
+  <!-- WORKSHEET CONTAINER -->
+  <main class="container">
+
+    <!-- CATEGORY: Alphabet -->
+    <section class="category-section section-active" id="alphabet" style="border-top-color: #FF6B8B;">
+      <div class="cat-header">
+        <div class="cat-title-wrap">
+          <div class="cat-icon-badge" style="background: #FF6B8B;"><i class="fa-solid fa-font"></i></div>
+          <div>
+            <h2 class="cat-title">Alphabet</h2>
+            <span style="font-size: 13px; color: var(--text-muted);">Worksheet Latihan Mengenal &amp; Menulis Huruf</span>
+          </div>
+        </div>
+        <div class="cat-count">4 Lembar Aktivitas</div>
+      </div>
+      <div class="items-grid">
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FF6B8B;"><i class="fa-solid fa-a"></i></div>
+            <span class="card-num">#01</span>
+          </div>
+          <h3 class="worksheet-title">Alphabet Lembar 1</h3>
+          <a href="https://drive.google.com/file/d/1Z5h-sDVdT5ygnXUbmvb_nyHVN3yVj3v_/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FFA45B;"><i class="fa-solid fa-font"></i></div>
+            <span class="card-num">#02</span>
+          </div>
+          <h3 class="worksheet-title">Alphabet Lembar 2</h3>
+          <a href="https://drive.google.com/file/d/1Tw-vFbSROvHVsiNqJ9pVblP7bwH_s8Ut/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #4EBA6F;"><i class="fa-solid fa-spell-check"></i></div>
+            <span class="card-num">#03</span>
+          </div>
+          <h3 class="worksheet-title">Alphabet Lembar 3</h3>
+          <a href="https://drive.google.com/file/d/1U6B-wAzcqAqpDSbAQhbaUBiv06NdgREm/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #4EA8DE;"><i class="fa-solid fa-book-open-reader"></i></div>
+            <span class="card-num">#04</span>
+          </div>
+          <h3 class="worksheet-title">Alphabet Lembar 4</h3>
+          <a href="https://drive.google.com/file/d/1YCy1u2DngWU5tK8j2fWqmFAACvyHLq23/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: Color -->
+    <section class="category-section" id="color" style="border-top-color: #FFA45B;">
+      <div class="cat-header">
+        <div class="cat-title-wrap">
+          <div class="cat-icon-badge" style="background: #FFA45B;"><i class="fa-solid fa-palette"></i></div>
+          <div>
+            <h2 class="cat-title">Color</h2>
+            <span style="font-size: 13px; color: var(--text-muted);">Mengenal Kombinasi Warna &amp; Mewarnai Ceria</span>
+          </div>
+        </div>
+        <div class="cat-count">4 Lembar Aktivitas</div>
+      </div>
+      <div class="items-grid">
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #EF476F;"><i class="fa-solid fa-paint-roller"></i></div>
+            <span class="card-num">#01</span>
+          </div>
+          <h3 class="worksheet-title">Color Lembar 1</h3>
+          <a href="https://drive.google.com/file/d/1jqg0VNZrTAGsA5fd_O3FD73Oq4hEzQVP/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FFD166;"><i class="fa-solid fa-fill-drip"></i></div>
+            <span class="card-num">#02</span>
+          </div>
+          <h3 class="worksheet-title">Color Lembar 2</h3>
+          <a href="https://drive.google.com/file/d/1gUJYUA8ABOtCOPteX4LNuZ25PEa_uwB3/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #06D6A0;"><i class="fa-solid fa-brush"></i></div>
+            <span class="card-num">#03</span>
+          </div>
+          <h3 class="worksheet-title">Color Lembar 3</h3>
+          <a href="https://drive.google.com/file/d/1vm3o9Ox8Pw-tAyzq1a1Z5UPDB4t0FLvX/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #118AB2;"><i class="fa-solid fa-eye-dropper"></i></div>
+            <span class="card-num">#04</span>
+          </div>
+          <h3 class="worksheet-title">Color Lembar 4</h3>
+          <a href="https://drive.google.com/file/d/19CIqonTPPcEHo5AOxdyMwrbBj9EQ-nsh/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: Color by numbers -->
+    <section class="category-section" id="color-by-numbers" style="border-top-color: #FFB800;">
+      <div class="cat-header">
+        <div class="cat-title-wrap">
+          <div class="cat-icon-badge" style="background: #FFB800;"><i class="fa-solid fa-brush"></i></div>
+          <div>
+            <h2 class="cat-title">Color by numbers</h2>
+            <span style="font-size: 13px; color: var(--text-muted);">Mewarnai Berdasarkan Kode Angka Edukatif</span>
+          </div>
+        </div>
+        <div class="cat-count">5 Lembar Aktivitas</div>
+      </div>
+      <div class="items-grid">
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FF6B8B;"><i class="fa-solid fa-1"></i></div>
+            <span class="card-num">#01</span>
+          </div>
+          <h3 class="worksheet-title">Color by numbers Lembar 1</h3>
+          <a href="https://drive.google.com/file/d/1wPBVYNY1uxe55PGQPQVdEVRXzONHhMn5/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FFA45B;"><i class="fa-solid fa-2"></i></div>
+            <span class="card-num">#02</span>
+          </div>
+          <h3 class="worksheet-title">Color by numbers Lembar 2</h3>
+          <a href="https://drive.google.com/file/d/19tgknNspVq_vsQGe9WuN-czd3bU9y36l/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #4EBA6F;"><i class="fa-solid fa-3"></i></div>
+            <span class="card-num">#03</span>
+          </div>
+          <h3 class="worksheet-title">Color by numbers Lembar 3</h3>
+          <a href="https://drive.google.com/file/d/1UDTz6yBGuhUhXVkI-0tYEjRKQZwTdJ0_/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #3A86FF;"><i class="fa-solid fa-palette"></i></div>
+            <span class="card-num">#04</span>
+          </div>
+          <h3 class="worksheet-title">Color by numbers Lembar 4</h3>
+          <a href="https://drive.google.com/file/d/1o6B6pyawxnLgpn-nsSo-1Himh9m_K4Bk/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #8338EC;"><i class="fa-solid fa-paintbrush"></i></div>
+            <span class="card-num">#05</span>
+          </div>
+          <h3 class="worksheet-title">Color by numbers Lembar 5</h3>
+          <a href="https://drive.google.com/file/d/1qhkDAjvQWnbqO_OlBL_NCJfny8kCn4Eu/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: Connect the dots -->
+    <section class="category-section" id="connect-the-dots" style="border-top-color: #4EBA6F;">
+      <div class="cat-header">
+        <div class="cat-title-wrap">
+          <div class="cat-icon-badge" style="background: #4EBA6F;"><i class="fa-solid fa-circle-nodes"></i></div>
+          <div>
+            <h2 class="cat-title">Connect the dots</h2>
+            <span style="font-size: 13px; color: var(--text-muted);">Menyambungkan Titik Membentuk Gambar</span>
+          </div>
+        </div>
+        <div class="cat-count">6 Lembar Aktivitas</div>
+      </div>
+      <div class="items-grid">
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #4EBA6F;"><i class="fa-solid fa-pen-ruler"></i></div>
+            <span class="card-num">#01</span>
+          </div>
+          <h3 class="worksheet-title">Connect the dots Lembar 1</h3>
+          <a href="https://drive.google.com/file/d/1wkbnHv4VxW2GLyw8NoGEs9h-QBON2fVh/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #06D6A0;"><i class="fa-solid fa-route"></i></div>
+            <span class="card-num">#02</span>
+          </div>
+          <h3 class="worksheet-title">Connect the dots Lembar 2</h3>
+          <a href="https://drive.google.com/file/d/1Q2KXtxZZhPpH--GAfWXijLRZn8MaNErC/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #118AB2;"><i class="fa-solid fa-vector-square"></i></div>
+            <span class="card-num">#03</span>
+          </div>
+          <h3 class="worksheet-title">Connect the dots Lembar 3</h3>
+          <a href="https://drive.google.com/file/d/1V2Xj4PUEx3E5D9Sl4oxikH4FD0yJLOvq/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #3A86FF;"><i class="fa-solid fa-draw-polygon"></i></div>
+            <span class="card-num">#04</span>
+          </div>
+          <h3 class="worksheet-title">Connect the dots Lembar 4</h3>
+          <a href="https://drive.google.com/file/d/1uPKU7XLrWb9poZ0dhpY2URbCNNHHxyC9/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #8338EC;"><i class="fa-solid fa-bezier-curve"></i></div>
+            <span class="card-num">#05</span>
+          </div>
+          <h3 class="worksheet-title">Connect the dots Lembar 5</h3>
+          <a href="https://drive.google.com/file/d/1__gAfJDQhQ2qUOV_h_fCAdYUDkM4ILj6/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FF6B8B;"><i class="fa-solid fa-star"></i></div>
+            <span class="card-num">#06</span>
+          </div>
+          <h3 class="worksheet-title">Connect the dots Lembar 6</h3>
+          <a href="https://drive.google.com/file/d/1vy-jomlVewUe5gOJbbv1Di1qzxtPFvET/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: Counting game -->
+    <section class="category-section" id="counting-game" style="border-top-color: #06D6A0;">
+      <div class="cat-header">
+        <div class="cat-title-wrap">
+          <div class="cat-icon-badge" style="background: #06D6A0;"><i class="fa-solid fa-calculator"></i></div>
+          <div>
+            <h2 class="cat-title">Counting game</h2>
+            <span style="font-size: 13px; color: var(--text-muted);">Permainan Berhitung Benda Menyenangkan</span>
+          </div>
+        </div>
+        <div class="cat-count">6 Lembar Aktivitas</div>
+      </div>
+      <div class="items-grid">
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #06D6A0;"><i class="fa-solid fa-apple-whole"></i></div>
+            <span class="card-num">#01</span>
+          </div>
+          <h3 class="worksheet-title">Counting game Lembar 1</h3>
+          <a href="https://drive.google.com/file/d/1LRXp9gtz7g5QXyVdeNOPOdIIpSgAtjAr/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FFA45B;"><i class="fa-solid fa-shapes"></i></div>
+            <span class="card-num">#02</span>
+          </div>
+          <h3 class="worksheet-title">Counting game Lembar 2</h3>
+          <a href="https://drive.google.com/file/d/1Fswr5A2UHbGadZJY0DohXxV6SY5mjA-2/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #118AB2;"><i class="fa-solid fa-dice"></i></div>
+            <span class="card-num">#03</span>
+          </div>
+          <h3 class="worksheet-title">Counting game Lembar 3</h3>
+          <a href="https://drive.google.com/file/d/1_A3E3KRLFxk1X9oE7cEV4aUpWVukkYyx/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #8338EC;"><i class="fa-solid fa-cookie-bite"></i></div>
+            <span class="card-num">#04</span>
+          </div>
+          <h3 class="worksheet-title">Counting game Lembar 4</h3>
+          <a href="https://drive.google.com/file/d/1FNW0lNrpDAnMTWMS7-884grsg29_Zn_r/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FF6B8B;"><i class="fa-solid fa-cubes"></i></div>
+            <span class="card-num">#05</span>
+          </div>
+          <h3 class="worksheet-title">Counting game Lembar 5</h3>
+          <a href="https://drive.google.com/file/d/1AGQNqqtoIdHGmOC6rNHvbl2JQlRwFWUE/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #4EA8DE;"><i class="fa-solid fa-fish"></i></div>
+            <span class="card-num">#06</span>
+          </div>
+          <h3 class="worksheet-title">Counting game Lembar 6</h3>
+          <a href="https://drive.google.com/file/d/15hm69oVOjug7CfspJMcLHUPtv0kPrIVF/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: Crosswords -->
+    <section class="category-section" id="crosswords" style="border-top-color: #118AB2;">
+      <div class="cat-header">
+        <div class="cat-title-wrap">
+          <div class="cat-icon-badge" style="background: #118AB2;"><i class="fa-solid fa-table-cells"></i></div>
+          <div>
+            <h2 class="cat-title">Crosswords</h2>
+            <span style="font-size: 13px; color: var(--text-muted);">Teka-Teki Silang Edukatif Kata Bergambar</span>
+          </div>
+        </div>
+        <div class="cat-count">5 Lembar Aktivitas</div>
+      </div>
+      <div class="items-grid">
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #118AB2;"><i class="fa-solid fa-border-all"></i></div>
+            <span class="card-num">#01</span>
+          </div>
+          <h3 class="worksheet-title">Crosswords Lembar 1</h3>
+          <a href="https://drive.google.com/file/d/15t1EU9m_NTMHv52M-woNnUcbk4YC8zeD/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #06D6A0;"><i class="fa-solid fa-font"></i></div>
+            <span class="card-num">#02</span>
+          </div>
+          <h3 class="worksheet-title">Crosswords Lembar 2</h3>
+          <a href="https://drive.google.com/file/d/1t-BnH7VLeKbRYgUy7paQ1nlBAffrxq25/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #3A86FF;"><i class="fa-solid fa-spell-check"></i></div>
+            <span class="card-num">#03</span>
+          </div>
+          <h3 class="worksheet-title">Crosswords Lembar 3</h3>
+          <a href="https://drive.google.com/file/d/1EAgC5Nm5Q6_IZyTYhhop272w-a1tmrCk/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FFA45B;"><i class="fa-solid fa-keyboard"></i></div>
+            <span class="card-num">#04</span>
+          </div>
+          <h3 class="worksheet-title">Crosswords Lembar 4</h3>
+          <a href="https://drive.google.com/file/d/1ZAz_bGkPRKNBsbw65HJCJZfubQGzAcsu/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #EF476F;"><i class="fa-solid fa-puzzle-piece"></i></div>
+            <span class="card-num">#05</span>
+          </div>
+          <h3 class="worksheet-title">Crosswords Lembar 5</h3>
+          <a href="https://drive.google.com/file/d/1Eew18Xoj3hfe_lba-35N5EuhrMNRqhk8/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: Cut and glue -->
+    <section class="category-section" id="cut-and-glue" style="border-top-color: #4EA8DE;">
+      <div class="cat-header">
+        <div class="cat-title-wrap">
+          <div class="cat-icon-badge" style="background: #4EA8DE;"><i class="fa-solid fa-scissors"></i></div>
+          <div>
+            <h2 class="cat-title">Cut and glue</h2>
+            <span style="font-size: 13px; color: var(--text-muted);">Aktivitas Motorik Halus Gunting &amp; Tempel</span>
+          </div>
+        </div>
+        <div class="cat-count">7 Lembar Aktivitas</div>
+      </div>
+      <div class="items-grid">
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #4EA8DE;"><i class="fa-solid fa-scissors"></i></div>
+            <span class="card-num">#01</span>
+          </div>
+          <h3 class="worksheet-title">Cut and glue Lembar 1</h3>
+          <a href="https://drive.google.com/file/d/1cSlERKJMs9PPny0XikRutLeVFZJrDIRb/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FF6B8B;"><i class="fa-solid fa-paste"></i></div>
+            <span class="card-num">#02</span>
+          </div>
+          <h3 class="worksheet-title">Cut and glue Lembar 2</h3>
+          <a href="https://drive.google.com/file/d/1zRkHBiN7pkcReEcQpYC4A2ZbzdGw3MFe/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FFA45B;"><i class="fa-solid fa-stamp"></i></div>
+            <span class="card-num">#03</span>
+          </div>
+          <h3 class="worksheet-title">Cut and glue Lembar 3</h3>
+          <a href="https://drive.google.com/file/d/1xslu_a27_fR3Vf_6uAO9-Qyaukvd73nQ/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #06D6A0;"><i class="fa-solid fa-shapes"></i></div>
+            <span class="card-num">#04</span>
+          </div>
+          <h3 class="worksheet-title">Cut and glue Lembar 4</h3>
+          <a href="https://drive.google.com/file/d/1LxRRBy79ppaT4M4U3J6sVk-VSpRKydDE/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #3A86FF;"><i class="fa-solid fa-paperclip"></i></div>
+            <span class="card-num">#05</span>
+          </div>
+          <h3 class="worksheet-title">Cut and glue Lembar 5</h3>
+          <a href="https://drive.google.com/file/d/13ruR2-wC17jeWQXAkZrnebsH8fFys2oD/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #8338EC;"><i class="fa-solid fa-hand-holding-heart"></i></div>
+            <span class="card-num">#06</span>
+          </div>
+          <h3 class="worksheet-title">Cut and glue Lembar 6</h3>
+          <a href="https://drive.google.com/file/d/1H11HGzxLodrO3g_jAb7tyd4guif_e6SJ/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #F7B801;"><i class="fa-solid fa-wand-magic"></i></div>
+            <span class="card-num">#07</span>
+          </div>
+          <h3 class="worksheet-title">Cut and glue Lembar 7</h3>
+          <a href="https://drive.google.com/file/d/1UAxDtDCw9nBfI2p5az9E8Mvh26SSV3Yv/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: Drawing -->
+    <section class="category-section" id="drawing" style="border-top-color: #7B2CBF;">
+      <div class="cat-header">
+        <div class="cat-title-wrap">
+          <div class="cat-icon-badge" style="background: #7B2CBF;"><i class="fa-solid fa-pen-nib"></i></div>
+          <div>
+            <h2 class="cat-title">Drawing</h2>
+            <span style="font-size: 13px; color: var(--text-muted);">Belajar Menggambar Langkah demi Langkah</span>
+          </div>
+        </div>
+        <div class="cat-count">9 Lembar Aktivitas</div>
+      </div>
+      <div class="items-grid">
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #7B2CBF;"><i class="fa-solid fa-pencil"></i></div>
+            <span class="card-num">#01</span>
+          </div>
+          <h3 class="worksheet-title">Drawing Lembar 1</h3>
+          <a href="https://drive.google.com/file/d/1KIE8OYZNEMJ_J1vf2fWWlwNxbQowytMv/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FFA45B;"><i class="fa-solid fa-cat"></i></div>
+            <span class="card-num">#02</span>
+          </div>
+          <h3 class="worksheet-title">Drawing Lembar 2</h3>
+          <a href="https://drive.google.com/file/d/1nLzxEUXx-8YC9mJwRXsm3xmRWFuxPOWE/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #4EBA6F;"><i class="fa-solid fa-dog"></i></div>
+            <span class="card-num">#03</span>
+          </div>
+          <h3 class="worksheet-title">Drawing Lembar 3</h3>
+          <a href="https://drive.google.com/file/d/1vYAiRIOS7-cv7ay65Z8IIre6kIAWCimU/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #3A86FF;"><i class="fa-solid fa-car"></i></div>
+            <span class="card-num">#04</span>
+          </div>
+          <h3 class="worksheet-title">Drawing Lembar 4</h3>
+          <a href="https://drive.google.com/file/d/1yhARqABsqHn5vKCeip2AFylICpnyBKgk/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FF6B8B;"><i class="fa-solid fa-tree"></i></div>
+            <span class="card-num">#05</span>
+          </div>
+          <h3 class="worksheet-title">Drawing Lembar 5</h3>
+          <a href="https://drive.google.com/file/d/14MJc_o_Ef0MDl325_WhPYdCBnrVNIv-x/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #06D6A0;"><i class="fa-solid fa-house"></i></div>
+            <span class="card-num">#06</span>
+          </div>
+          <h3 class="worksheet-title">Drawing Lembar 6</h3>
+          <a href="https://drive.google.com/file/d/1RHnejNOFXpzim5P5QFkNLp44PQrudffi/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #F77F00;"><i class="fa-solid fa-rocket"></i></div>
+            <span class="card-num">#07</span>
+          </div>
+          <h3 class="worksheet-title">Drawing Lembar 7</h3>
+          <a href="https://drive.google.com/file/d/1D_TBKJJnFfjDoZgVNgqsYDHici5CcEbo/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #118AB2;"><i class="fa-solid fa-sun"></i></div>
+            <span class="card-num">#08</span>
+          </div>
+          <h3 class="worksheet-title">Drawing Lembar 8</h3>
+          <a href="https://drive.google.com/file/d/1dizcJxImOws9YnLtxmH1eyGXIyUNRNEU/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #9D4EDD;"><i class="fa-solid fa-cloud"></i></div>
+            <span class="card-num">#09</span>
+          </div>
+          <h3 class="worksheet-title">Drawing Lembar 9</h3>
+          <a href="https://drive.google.com/file/d/15Cw4lpeQNsmZfyQ40FuWLz2lHV0fWmkA/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: Matching game -->
+    <section class="category-section" id="matching-game" style="border-top-color: #9D4EDD;">
+      <div class="cat-header">
+        <div class="cat-title-wrap">
+          <div class="cat-icon-badge" style="background: #9D4EDD;"><i class="fa-solid fa-object-ungroup"></i></div>
+          <div>
+            <h2 class="cat-title">Matching game</h2>
+            <span style="font-size: 13px; color: var(--text-muted);">Mencocokkan Gambar &amp; Objek Berpasangan</span>
+          </div>
+        </div>
+        <div class="cat-count">5 Lembar Aktivitas</div>
+      </div>
+      <div class="items-grid">
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #9D4EDD;"><i class="fa-solid fa-link"></i></div>
+            <span class="card-num">#01</span>
+          </div>
+          <h3 class="worksheet-title">Matching game Lembar 1</h3>
+          <a href="https://drive.google.com/file/d/1JOvlnL1nmeU4tVPAqxODQH4fZlOJHvs5/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #3A86FF;"><i class="fa-solid fa-arrow-right-arrow-left"></i></div>
+            <span class="card-num">#02</span>
+          </div>
+          <h3 class="worksheet-title">Matching game Lembar 2</h3>
+          <a href="https://drive.google.com/file/d/1_bivH5RQOOEoZMdKtQjHHkBbn48YGOaz/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FF6B8B;"><i class="fa-solid fa-people-arrows"></i></div>
+            <span class="card-num">#03</span>
+          </div>
+          <h3 class="worksheet-title">Matching game Lembar 3</h3>
+          <a href="https://drive.google.com/file/d/1OMvfdYX8leNq9SoXmdWmh2YNgeBxB8RO/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #06D6A0;"><i class="fa-solid fa-puzzle-piece"></i></div>
+            <span class="card-num">#04</span>
+          </div>
+          <h3 class="worksheet-title">Matching game Lembar 4</h3>
+          <a href="https://drive.google.com/file/d/1Gw9nRvn3kFp6fJj-lSomOohzZCH-RB6u/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FFA45B;"><i class="fa-solid fa-shapes"></i></div>
+            <span class="card-num">#05</span>
+          </div>
+          <h3 class="worksheet-title">Matching game Lembar 5</h3>
+          <a href="https://drive.google.com/file/d/1Y2BC-U39jCAuOp_0fO6KqBA5UEW-MrY6/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: Math -->
+    <section class="category-section" id="math" style="border-top-color: #EF476F;">
+      <div class="cat-header">
+        <div class="cat-title-wrap">
+          <div class="cat-icon-badge" style="background: #EF476F;"><i class="fa-solid fa-plus-minus"></i></div>
+          <div>
+            <h2 class="cat-title">Math</h2>
+            <span style="font-size: 13px; color: var(--text-muted);">Matematika Dasar, Tambah &amp; Kurang Seru</span>
+          </div>
+        </div>
+        <div class="cat-count">5 Lembar Aktivitas</div>
+      </div>
+      <div class="items-grid">
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #EF476F;"><i class="fa-solid fa-plus"></i></div>
+            <span class="card-num">#01</span>
+          </div>
+          <h3 class="worksheet-title">Math Lembar 1</h3>
+          <a href="https://drive.google.com/file/d/1_tlrkIvIXdj4cic1VGaxhNf1jmchFO_-/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FFA45B;"><i class="fa-solid fa-minus"></i></div>
+            <span class="card-num">#02</span>
+          </div>
+          <h3 class="worksheet-title">Math Lembar 2</h3>
+          <a href="https://drive.google.com/file/d/13DLjLSy2FalppvhAknjt9AaxQ16fKJBj/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #4EBA6F;"><i class="fa-solid fa-equals"></i></div>
+            <span class="card-num">#03</span>
+          </div>
+          <h3 class="worksheet-title">Math Lembar 3</h3>
+          <a href="https://drive.google.com/file/d/1SaCpiC8c38qW0n-GBuq95ETltf1gjrxq/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #3A86FF;"><i class="fa-solid fa-divide"></i></div>
+            <span class="card-num">#04</span>
+          </div>
+          <h3 class="worksheet-title">Math Lembar 4</h3>
+          <a href="https://drive.google.com/file/d/13kUHm1iXhHMAB9fjAEgIZriuOJbdSV_p/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #8338EC;"><i class="fa-solid fa-xmark"></i></div>
+            <span class="card-num">#05</span>
+          </div>
+          <h3 class="worksheet-title">Math Lembar 5</h3>
+          <a href="https://drive.google.com/file/d/1_oMkYH2fWnJviosgp5286MeCSRz52ZF9/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: Maze game -->
+    <section class="category-section" id="maze-game" style="border-top-color: #F77F00;">
+      <div class="cat-header">
+        <div class="cat-title-wrap">
+          <div class="cat-icon-badge" style="background: #F77F00;"><i class="fa-solid fa-route"></i></div>
+          <div>
+            <h2 class="cat-title">Maze game</h2>
+            <span style="font-size: 13px; color: var(--text-muted);">Labirin Menemukan Jalan &amp; Mengasah Logika</span>
+          </div>
+        </div>
+        <div class="cat-count">5 Lembar Aktivitas</div>
+      </div>
+      <div class="items-grid">
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #F77F00;"><i class="fa-solid fa-compass"></i></div>
+            <span class="card-num">#01</span>
+          </div>
+          <h3 class="worksheet-title">Maze game Lembar 1</h3>
+          <a href="https://drive.google.com/file/d/1aPUzXWFSbS4ShG3e5_p4yMlH3Wy7f5wp/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FFA45B;"><i class="fa-solid fa-location-dot"></i></div>
+            <span class="card-num">#02</span>
+          </div>
+          <h3 class="worksheet-title">Maze game Lembar 2</h3>
+          <a href="https://drive.google.com/file/d/1ugjZ_hCtqcNn8U1JyjZ8R-RXN5mpsqSK/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #4EBA6F;"><i class="fa-solid fa-shoe-prints"></i></div>
+            <span class="card-num">#03</span>
+          </div>
+          <h3 class="worksheet-title">Maze game Lembar 3</h3>
+          <a href="https://drive.google.com/file/d/1NnEYRHCY1ZVuudiTCe04TCaQFBtF2QzG/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #3A86FF;"><i class="fa-solid fa-map-pin"></i></div>
+            <span class="card-num">#04</span>
+          </div>
+          <h3 class="worksheet-title">Maze game Lembar 4</h3>
+          <a href="https://drive.google.com/file/d/16pFGdv6WZ-fhOVtX3u23iUPThCbeLFRc/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #EF476F;"><i class="fa-solid fa-flag-checkered"></i></div>
+            <span class="card-num">#05</span>
+          </div>
+          <h3 class="worksheet-title">Maze game Lembar 5</h3>
+          <a href="https://drive.google.com/file/d/1y85n2r6FUh1a8veW-tGcJ6bxfGf11E8K/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: Numbers -->
+    <section class="category-section" id="numbers" style="border-top-color: #2A9D8F;">
+      <div class="cat-header">
+        <div class="cat-title-wrap">
+          <div class="cat-icon-badge" style="background: #2A9D8F;"><i class="fa-solid fa-arrow-down-1-9"></i></div>
+          <div>
+            <h2 class="cat-title">Numbers</h2>
+            <span style="font-size: 13px; color: var(--text-muted);">Mengenal Angka 1-100 &amp; Menghitung Cepat</span>
+          </div>
+        </div>
+        <div class="cat-count">10 Lembar Aktivitas</div>
+      </div>
+      <div class="items-grid">
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #2A9D8F;"><i class="fa-solid fa-1"></i></div>
+            <span class="card-num">#01</span>
+          </div>
+          <h3 class="worksheet-title">Numbers Lembar 1</h3>
+          <a href="https://drive.google.com/file/d/1J5RnL2FJlvhJDiIm4h3c-DlHlen1JWaI/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FFA45B;"><i class="fa-solid fa-2"></i></div>
+            <span class="card-num">#02</span>
+          </div>
+          <h3 class="worksheet-title">Numbers Lembar 2</h3>
+          <a href="https://drive.google.com/file/d/1Kh6MIG8tSLnfTF05xJJHCwxDPDgDILjm/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #4EBA6F;"><i class="fa-solid fa-3"></i></div>
+            <span class="card-num">#03</span>
+          </div>
+          <h3 class="worksheet-title">Numbers Lembar 3</h3>
+          <a href="https://drive.google.com/file/d/1v8wbWjiR7qvu4FO-Fcd6yybkr1DyrQHP/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #3A86FF;"><i class="fa-solid fa-4"></i></div>
+            <span class="card-num">#04</span>
+          </div>
+          <h3 class="worksheet-title">Numbers Lembar 4</h3>
+          <a href="https://drive.google.com/file/d/1NMOWd3xEWWSbRINwCFXF_aNjo6lVmiBO/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #8338EC;"><i class="fa-solid fa-5"></i></div>
+            <span class="card-num">#05</span>
+          </div>
+          <h3 class="worksheet-title">Numbers Lembar 5</h3>
+          <a href="https://drive.google.com/file/d/1gZtAOccs907spT3MxW_QhfB6Xj_EKmqE/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FF6B8B;"><i class="fa-solid fa-6"></i></div>
+            <span class="card-num">#06</span>
+          </div>
+          <h3 class="worksheet-title">Numbers Lembar 6</h3>
+          <a href="https://drive.google.com/file/d/1gKLE03nekjGFDka0exY21B0xl-jtS38n/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #06D6A0;"><i class="fa-solid fa-7"></i></div>
+            <span class="card-num">#07</span>
+          </div>
+          <h3 class="worksheet-title">Numbers Lembar 7</h3>
+          <a href="https://drive.google.com/file/d/1zHQb6IfWT07TWUeoN3bp5QwQIK3LCR9b/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #F77F00;"><i class="fa-solid fa-8"></i></div>
+            <span class="card-num">#08</span>
+          </div>
+          <h3 class="worksheet-title">Numbers Lembar 8</h3>
+          <a href="https://drive.google.com/file/d/17I02pYSmrMUPdSs4hB5hjrtLUKXE4km3/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #118AB2;"><i class="fa-solid fa-9"></i></div>
+            <span class="card-num">#09</span>
+          </div>
+          <h3 class="worksheet-title">Numbers Lembar 9</h3>
+          <a href="https://drive.google.com/file/d/1yaqQvTJ36EhbWwRpgG4wjHKxQBcOqQma/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #EF476F;"><i class="fa-solid fa-0"></i></div>
+            <span class="card-num">#10</span>
+          </div>
+          <h3 class="worksheet-title">Numbers Lembar 10</h3>
+          <a href="https://drive.google.com/file/d/1s2khgQHF5VeDua8h6iZ-5h6HjSBjXtyv/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: Odd one cut -->
+    <section class="category-section" id="odd-one-cut" style="border-top-color: #E76F51;">
+      <div class="cat-header">
+        <div class="cat-title-wrap">
+          <div class="cat-icon-badge" style="background: #E76F51;"><i class="fa-solid fa-puzzle-piece"></i></div>
+          <div>
+            <h2 class="cat-title">Odd one cut</h2>
+            <span style="font-size: 13px; color: var(--text-muted);">Mencari Objek yang Berbeda &amp; Tidak Cocok</span>
+          </div>
+        </div>
+        <div class="cat-count">5 Lembar Aktivitas</div>
+      </div>
+      <div class="items-grid">
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #E76F51;"><i class="fa-solid fa-eye"></i></div>
+            <span class="card-num">#01</span>
+          </div>
+          <h3 class="worksheet-title">Odd one cut Lembar 1</h3>
+          <a href="https://drive.google.com/file/d/1DFo9rdNTFADLNwAnB9UYNFmLX1QPICA_/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FFA45B;"><i class="fa-solid fa-magnifying-glass"></i></div>
+            <span class="card-num">#02</span>
+          </div>
+          <h3 class="worksheet-title">Odd one cut Lembar 2</h3>
+          <a href="https://drive.google.com/file/d/1L1RKSwbEohk1q8dXulzQCXzFuZx0tBRN/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #4EBA6F;"><i class="fa-solid fa-filter"></i></div>
+            <span class="card-num">#03</span>
+          </div>
+          <h3 class="worksheet-title">Odd one cut Lembar 3</h3>
+          <a href="https://drive.google.com/file/d/12sc74UdoXtQWcwY0h4fGqP-KVkldUst8/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #3A86FF;"><i class="fa-solid fa-shapes"></i></div>
+            <span class="card-num">#04</span>
+          </div>
+          <h3 class="worksheet-title">Odd one cut Lembar 4</h3>
+          <a href="https://drive.google.com/file/d/1_iPr2PUl4pCyrvp45AKHcUvoJmv1vWqZ/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #8338EC;"><i class="fa-solid fa-circle-question"></i></div>
+            <span class="card-num">#05</span>
+          </div>
+          <h3 class="worksheet-title">Odd one cut Lembar 5</h3>
+          <a href="https://drive.google.com/file/d/11ebi5An8IaSID4haKaZNFv6BOgzT3bol/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: Pairing game -->
+    <section class="category-section" id="pairing-game" style="border-top-color: #3A86FF;">
+      <div class="cat-header">
+        <div class="cat-title-wrap">
+          <div class="cat-icon-badge" style="background: #3A86FF;"><i class="fa-solid fa-people-arrows"></i></div>
+          <div>
+            <h2 class="cat-title">Pairing game</h2>
+            <span style="font-size: 13px; color: var(--text-muted);">Mencari &amp; Menghubungkan Pasangan Gambar</span>
+          </div>
+        </div>
+        <div class="cat-count">5 Lembar Aktivitas</div>
+      </div>
+      <div class="items-grid">
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #3A86FF;"><i class="fa-solid fa-handshake"></i></div>
+            <span class="card-num">#01</span>
+          </div>
+          <h3 class="worksheet-title">Pairing game Lembar 1</h3>
+          <a href="https://drive.google.com/file/d/1eFNUmeS2A9ix15rhvNHpwVHLONTFYVLp/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FF6B8B;"><i class="fa-solid fa-heart"></i></div>
+            <span class="card-num">#02</span>
+          </div>
+          <h3 class="worksheet-title">Pairing game Lembar 2</h3>
+          <a href="https://drive.google.com/file/d/1GXm8Q8S0emytZAiyhLOFpzcAqFVRe1zQ/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FFA45B;"><i class="fa-solid fa-socks"></i></div>
+            <span class="card-num">#03</span>
+          </div>
+          <h3 class="worksheet-title">Pairing game Lembar 3</h3>
+          <a href="https://drive.google.com/file/d/1rY3IaBWg5EwpPIyM5X_oYJyJt8kl40lv/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #06D6A0;"><i class="fa-solid fa-shoe-prints"></i></div>
+            <span class="card-num">#04</span>
+          </div>
+          <h3 class="worksheet-title">Pairing game Lembar 4</h3>
+          <a href="https://drive.google.com/file/d/1ZixTk-599Jw5ndS2ey4wjk12UQqgvzCU/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #8338EC;"><i class="fa-solid fa-key"></i></div>
+            <span class="card-num">#05</span>
+          </div>
+          <h3 class="worksheet-title">Pairing game Lembar 5</h3>
+          <a href="https://drive.google.com/file/d/1dQxlIq1l879-shzENmEb4wny1-eX9Y5S/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: Pattern -->
+    <section class="category-section" id="pattern" style="border-top-color: #8338EC;">
+      <div class="cat-header">
+        <div class="cat-title-wrap">
+          <div class="cat-icon-badge" style="background: #8338EC;"><i class="fa-solid fa-cubes"></i></div>
+          <div>
+            <h2 class="cat-title">Pattern</h2>
+            <span style="font-size: 13px; color: var(--text-muted);">Menebak Pola Berulang &amp; Kelanjutan Gambar</span>
+          </div>
+        </div>
+        <div class="cat-count">5 Lembar Aktivitas</div>
+      </div>
+      <div class="items-grid">
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #8338EC;"><i class="fa-solid fa-cubes-stacked"></i></div>
+            <span class="card-num">#01</span>
+          </div>
+          <h3 class="worksheet-title">Pattern Lembar 1</h3>
+          <a href="https://drive.google.com/file/d/1Xnx9LAvDM1l-oSiI1Qc0mR74KtVFmEdf/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #3A86FF;"><i class="fa-solid fa-gem"></i></div>
+            <span class="card-num">#02</span>
+          </div>
+          <h3 class="worksheet-title">Pattern Lembar 2</h3>
+          <a href="https://drive.google.com/file/d/1vAE_ycMYNP2aJ-txrOj9EvYLr9KdDPh6/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #06D6A0;"><i class="fa-solid fa-circle-notch"></i></div>
+            <span class="card-num">#03</span>
+          </div>
+          <h3 class="worksheet-title">Pattern Lembar 3</h3>
+          <a href="https://drive.google.com/file/d/1sG8vog-eQhImkUzBqsBUJaaqrcxVrj6/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FFA45B;"><i class="fa-solid fa-ring"></i></div>
+            <span class="card-num">#04</span>
+          </div>
+          <h3 class="worksheet-title">Pattern Lembar 4</h3>
+          <a href="https://drive.google.com/file/d/1fpORiwbRA0deQjMEKliUB77NRVSSp58E/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FF6B8B;"><i class="fa-solid fa-clapperboard"></i></div>
+            <span class="card-num">#05</span>
+          </div>
+          <h3 class="worksheet-title">Pattern Lembar 5</h3>
+          <a href="https://drive.google.com/file/d/1FeQWKrLREqnRDhC76wNO-kXGjE97nrve/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: Shadows game -->
+    <section class="category-section" id="shadows-game" style="border-top-color: #4361EE;">
+      <div class="cat-header">
+        <div class="cat-title-wrap">
+          <div class="cat-icon-badge" style="background: #4361EE;"><i class="fa-solid fa-cloud-moon"></i></div>
+          <div>
+            <h2 class="cat-title">Shadows game</h2>
+            <span style="font-size: 13px; color: var(--text-muted);">Mencocokkan Bayangan dengan Bentuk Aslinya</span>
+          </div>
+        </div>
+        <div class="cat-count">6 Lembar Aktivitas</div>
+      </div>
+      <div class="items-grid">
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #4361EE;"><i class="fa-solid fa-moon"></i></div>
+            <span class="card-num">#01</span>
+          </div>
+          <h3 class="worksheet-title">Shadows game Lembar 1</h3>
+          <a href="https://drive.google.com/file/d/1aTL8_xpli6JoDtxwvAbliYDJVQdmLsGZ/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #3A86FF;"><i class="fa-solid fa-ghost"></i></div>
+            <span class="card-num">#02</span>
+          </div>
+          <h3 class="worksheet-title">Shadows game Lembar 2</h3>
+          <a href="https://drive.google.com/file/d/1xuIf9tp-64bQA9-mdSi2CtJs4vLp53p4/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #06D6A0;"><i class="fa-solid fa-mask"></i></div>
+            <span class="card-num">#03</span>
+          </div>
+          <h3 class="worksheet-title">Shadows game Lembar 3</h3>
+          <a href="https://drive.google.com/file/d/1l_bwHxBMCl9KlodANHYSIX024PEemrmg/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FFA45B;"><i class="fa-solid fa-tree"></i></div>
+            <span class="card-num">#04</span>
+          </div>
+          <h3 class="worksheet-title">Shadows game Lembar 4</h3>
+          <a href="https://drive.google.com/file/d/16bpoonaGS1Xp4Tr1lfdbf60ZRZLQZ63A/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FF6B8B;"><i class="fa-solid fa-cat"></i></div>
+            <span class="card-num">#05</span>
+          </div>
+          <h3 class="worksheet-title">Shadows game Lembar 5</h3>
+          <a href="https://drive.google.com/file/d/1SAKYr651ioQ3x4n2Yzm9gThS59la5wZW/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #8338EC;"><i class="fa-solid fa-umbrella"></i></div>
+            <span class="card-num">#06</span>
+          </div>
+          <h3 class="worksheet-title">Shadows game Lembar 6</h3>
+          <a href="https://drive.google.com/file/d/102OOvSuEnFnJCrs4oFZ1Sx3ziWr-5f0Z/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: Shapes -->
+    <section class="category-section" id="shapes" style="border-top-color: #00BBF9;">
+      <div class="cat-header">
+        <div class="cat-title-wrap">
+          <div class="cat-icon-badge" style="background: #00BBF9;"><i class="fa-solid fa-shapes"></i></div>
+          <div>
+            <h2 class="cat-title">Shapes</h2>
+            <span style="font-size: 13px; color: var(--text-muted);">Mengenal Bangun Datar Geometri</span>
+          </div>
+        </div>
+        <div class="cat-count">4 Lembar Aktivitas</div>
+      </div>
+      <div class="items-grid">
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #00BBF9;"><i class="fa-solid fa-circle"></i></div>
+            <span class="card-num">#01</span>
+          </div>
+          <h3 class="worksheet-title">Shapes Lembar 1</h3>
+          <a href="https://drive.google.com/file/d/1pziz_hmc7SSm5_86mfeAv268Dm28n2gd/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FF6B8B;"><i class="fa-solid fa-square"></i></div>
+            <span class="card-num">#02</span>
+          </div>
+          <h3 class="worksheet-title">Shapes Lembar 2</h3>
+          <a href="https://drive.google.com/file/d/1Za2-LE8EZxMxwDFGOQdEQDR02iF96Q6J/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FFA45B;"><i class="fa-solid fa-play" style="transform: rotate(-90deg);"></i></div>
+            <span class="card-num">#03</span>
+          </div>
+          <h3 class="worksheet-title">Shapes Lembar 3</h3>
+          <a href="https://drive.google.com/file/d/1UZG7t_Azxlzp9EBLUANCegwUYgJarHTG/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #4EBA6F;"><i class="fa-solid fa-star"></i></div>
+            <span class="card-num">#04</span>
+          </div>
+          <h3 class="worksheet-title">Shapes Lembar 4</h3>
+          <a href="https://drive.google.com/file/d/1FLL9zwwxohHpYVUORH_bQ8cLTT7sutZ8/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: Spellings -->
+    <section class="category-section" id="spellings" style="border-top-color: #00F5D4;">
+      <div class="cat-header">
+        <div class="cat-title-wrap">
+          <div class="cat-icon-badge" style="background: #00F5D4; color: #006054;"><i class="fa-solid fa-spell-check"></i></div>
+          <div>
+            <h2 class="cat-title">Spellings</h2>
+            <span style="font-size: 13px; color: var(--text-muted);">Mengeja Kata Bahasa Indonesia &amp; Inggris</span>
+          </div>
+        </div>
+        <div class="cat-count">5 Lembar Aktivitas</div>
+      </div>
+      <div class="items-grid">
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #00BAA2;"><i class="fa-solid fa-book"></i></div>
+            <span class="card-num">#01</span>
+          </div>
+          <h3 class="worksheet-title">Spellings Lembar 1</h3>
+          <a href="https://drive.google.com/file/d/1FfuWiVkl0JYKAyHMe5dOoxdGc-3vJggq/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #3A86FF;"><i class="fa-solid fa-pen-fancy"></i></div>
+            <span class="card-num">#02</span>
+          </div>
+          <h3 class="worksheet-title">Spellings Lembar 2</h3>
+          <a href="https://drive.google.com/file/d/1f8TXD_PcKWrgSwTik-G4XgdN4KJWPKXf/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FF6B8B;"><i class="fa-solid fa-quote-right"></i></div>
+            <span class="card-num">#03</span>
+          </div>
+          <h3 class="worksheet-title">Spellings Lembar 3</h3>
+          <a href="https://drive.google.com/file/d/17-7l9tNNRkYfYZm_-uxeBG-iqRDGOG1Q/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FFA45B;"><i class="fa-solid fa-comment-dots"></i></div>
+            <span class="card-num">#04</span>
+          </div>
+          <h3 class="worksheet-title">Spellings Lembar 4</h3>
+          <a href="https://drive.google.com/file/d/19ZSnd31H1t_ILKOvhwhztPOeITVqrFDT/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #8338EC;"><i class="fa-solid fa-graduation-cap"></i></div>
+            <span class="card-num">#05</span>
+          </div>
+          <h3 class="worksheet-title">Spellings Lembar 5</h3>
+          <a href="https://drive.google.com/file/d/15Zn_T4g_AQCBv--yBaP7PaRpaU8SEsii/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: Spot differences -->
+    <section class="category-section" id="spot-differences" style="border-top-color: #FB5607;">
+      <div class="cat-header">
+        <div class="cat-title-wrap">
+          <div class="cat-icon-badge" style="background: #FB5607;"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <div>
+            <h2 class="cat-title">Spot differences</h2>
+            <span style="font-size: 13px; color: var(--text-muted);">Mencari Perbedaan Dua Gambar Serupa</span>
+          </div>
+        </div>
+        <div class="cat-count">5 Lembar Aktivitas</div>
+      </div>
+      <div class="items-grid">
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FB5607;"><i class="fa-solid fa-binoculars"></i></div>
+            <span class="card-num">#01</span>
+          </div>
+          <h3 class="worksheet-title">Spot differences Lembar 1</h3>
+          <a href="https://drive.google.com/file/d/1TqB0iVSPnY3jbGQ-fsL-x-hJk9owyS_0/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FFA45B;"><i class="fa-solid fa-eye"></i></div>
+            <span class="card-num">#02</span>
+          </div>
+          <h3 class="worksheet-title">Spot differences Lembar 2</h3>
+          <a href="https://drive.google.com/file/d/1UGczYOFOTM9XEizM4Nb6wqZKH4neLmUd/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #4EBA6F;"><i class="fa-solid fa-glasses"></i></div>
+            <span class="card-num">#03</span>
+          </div>
+          <h3 class="worksheet-title">Spot differences Lembar 3</h3>
+          <a href="https://drive.google.com/file/d/1I08_n3ROK32y08hC94n7pZ71Ibuu2S42/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #3A86FF;"><i class="fa-solid fa-bullseye"></i></div>
+            <span class="card-num">#04</span>
+          </div>
+          <h3 class="worksheet-title">Spot differences Lembar 4</h3>
+          <a href="https://drive.google.com/file/d/13S4sZ6GcXP1Y6j7HXrN5cYaxDnS660LL/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #8338EC;"><i class="fa-solid fa-crosshairs"></i></div>
+            <span class="card-num">#05</span>
+          </div>
+          <h3 class="worksheet-title">Spot differences Lembar 5</h3>
+          <a href="https://drive.google.com/file/d/1oS27k0ed_vxR5oOrdT5YRuuBsRzILyTp/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: Sudoku -->
+    <section class="category-section" id="sudoku" style="border-top-color: #FF006E;">
+      <div class="cat-header">
+        <div class="cat-title-wrap">
+          <div class="cat-icon-badge" style="background: #FF006E;"><i class="fa-solid fa-border-none"></i></div>
+          <div>
+            <h2 class="cat-title">Sudoku</h2>
+            <span style="font-size: 13px; color: var(--text-muted);">Sudoku Gambar &amp; Angka Khusus Anak</span>
+          </div>
+        </div>
+        <div class="cat-count">5 Lembar Aktivitas</div>
+      </div>
+      <div class="items-grid">
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FF006E;"><i class="fa-solid fa-table-cells-large"></i></div>
+            <span class="card-num">#01</span>
+          </div>
+          <h3 class="worksheet-title">Sudoku Lembar 1</h3>
+          <a href="https://drive.google.com/file/d/1FID3ZLPJC28LhZ8Td0ZJ5A7TvmSUtpRb/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FFA45B;"><i class="fa-solid fa-border-all"></i></div>
+            <span class="card-num">#02</span>
+          </div>
+          <h3 class="worksheet-title">Sudoku Lembar 2</h3>
+          <a href="https://drive.google.com/file/d/1C6DEsk9h9ef4W-nQvfu4qFnKTFB1_hv5/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #4EBA6F;"><i class="fa-solid fa-dice-four"></i></div>
+            <span class="card-num">#03</span>
+          </div>
+          <h3 class="worksheet-title">Sudoku Lembar 3</h3>
+          <a href="https://drive.google.com/file/d/1Eom_wTobsqr6opujiJGOEm1QQft7wruZ/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #3A86FF;"><i class="fa-solid fa-grid-2"></i></div>
+            <span class="card-num">#04</span>
+          </div>
+          <h3 class="worksheet-title">Sudoku Lembar 4</h3>
+          <a href="https://drive.google.com/file/d/16GEB3hzVAEjaMkDm1TcK8zBqvgyC4U6V/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #8338EC;"><i class="fa-solid fa-brain"></i></div>
+            <span class="card-num">#05</span>
+          </div>
+          <h3 class="worksheet-title">Sudoku Lembar 5</h3>
+          <a href="https://drive.google.com/file/d/1xLFPDrYDRiS0L3ok1WFlv5svitePK5_a/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: Time -->
+    <section class="category-section" id="time" style="border-top-color: #8AC926;">
+      <div class="cat-header">
+        <div class="cat-title-wrap">
+          <div class="cat-icon-badge" style="background: #8AC926;"><i class="fa-solid fa-clock"></i></div>
+          <div>
+            <h2 class="cat-title">Time</h2>
+            <span style="font-size: 13px; color: var(--text-muted);">Mengenal Jam, Menit &amp; Waktu Sehari-hari</span>
+          </div>
+        </div>
+        <div class="cat-count">1 Lembar Aktivitas</div>
+      </div>
+      <div class="items-grid">
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #8AC926;"><i class="fa-solid fa-stopwatch"></i></div>
+            <span class="card-num">#01</span>
+          </div>
+          <h3 class="worksheet-title">Time Lembar 1</h3>
+          <a href="https://drive.google.com/file/d/1eMJaP_sH1ym6hHukjrgc-c5vXGTjpWZI/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: Trace the shape -->
+    <section class="category-section" id="trace-the-shape" style="border-top-color: #1982C4;">
+      <div class="cat-header">
+        <div class="cat-title-wrap">
+          <div class="cat-icon-badge" style="background: #1982C4;"><i class="fa-solid fa-pencil"></i></div>
+          <div>
+            <h2 class="cat-title">Trace the shape</h2>
+            <span style="font-size: 13px; color: var(--text-muted);">Menebalkan Garis &amp; Bentuk Objek</span>
+          </div>
+        </div>
+        <div class="cat-count">1 Lembar Aktivitas</div>
+      </div>
+      <div class="items-grid">
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #1982C4;"><i class="fa-solid fa-pen-clip"></i></div>
+            <span class="card-num">#01</span>
+          </div>
+          <h3 class="worksheet-title">Trace the shape Lembar 1</h3>
+          <a href="https://drive.google.com/file/d/1y-mWxffih08OrWzfoyFSYZzQbx6EUl7f/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: Word search -->
+    <section class="category-section" id="word-search" style="border-top-color: #6A4C93;">
+      <div class="cat-header">
+        <div class="cat-title-wrap">
+          <div class="cat-icon-badge" style="background: #6A4C93;"><i class="fa-solid fa-file-lines"></i></div>
+          <div>
+            <h2 class="cat-title">Word search</h2>
+            <span style="font-size: 13px; color: var(--text-muted);">Mencari Kata Tersembunyi dalam Huruf Acak</span>
+          </div>
+        </div>
+        <div class="cat-count">1 Lembar Aktivitas</div>
+      </div>
+      <div class="items-grid">
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #6A4C93;"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+            <span class="card-num">#01</span>
+          </div>
+          <h3 class="worksheet-title">Word search Lembar 1</h3>
+          <a href="https://drive.google.com/file/d/18H4rdyTPV55XSdctSrNM585F4EAG43dX/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: Writing practice -->
+    <section class="category-section" id="writing-practice" style="border-top-color: #D81159;">
+      <div class="cat-header">
+        <div class="cat-title-wrap">
+          <div class="cat-icon-badge" style="background: #D81159;"><i class="fa-solid fa-marker"></i></div>
+          <div>
+            <h2 class="cat-title">Writing practice</h2>
+            <span style="font-size: 13px; color: var(--text-muted);">Latihan Menulis Rapi Huruf, Kata &amp; Angka</span>
+          </div>
+        </div>
+        <div class="cat-count">6 Lembar Aktivitas</div>
+      </div>
+      <div class="items-grid">
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #D81159;"><i class="fa-solid fa-pen-nib"></i></div>
+            <span class="card-num">#01</span>
+          </div>
+          <h3 class="worksheet-title">Writing practice Lembar 1</h3>
+          <a href="https://drive.google.com/file/d/1KR-OPY3R8rNrpI1yyHtNjYgRdLjOogD8/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FFA45B;"><i class="fa-solid fa-pencil"></i></div>
+            <span class="card-num">#02</span>
+          </div>
+          <h3 class="worksheet-title">Writing practice Lembar 2</h3>
+          <a href="https://drive.google.com/file/d/1uOiCAXfapU8dVEbVGIs7NX_VklIv78CC/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #4EBA6F;"><i class="fa-solid fa-lines-leaning"></i></div>
+            <span class="card-num">#03</span>
+          </div>
+          <h3 class="worksheet-title">Writing practice Lembar 3</h3>
+          <a href="https://drive.google.com/file/d/1oyk_ToGoHHWRxGT8BtVR0VXJ08DdPq2W/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #3A86FF;"><i class="fa-solid fa-feather"></i></div>
+            <span class="card-num">#04</span>
+          </div>
+          <h3 class="worksheet-title">Writing practice Lembar 4</h3>
+          <a href="https://drive.google.com/file/d/1ePO5D3Z5SgajsxSsUdAdRIyoGZBVwBzc/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #8338EC;"><i class="fa-solid fa-signature"></i></div>
+            <span class="card-num">#05</span>
+          </div>
+          <h3 class="worksheet-title">Writing practice Lembar 5</h3>
+          <a href="https://drive.google.com/file/d/1HhdO0u37y03vGVYST7bGe18KqwZQnvst/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+        <div class="worksheet-card">
+          <div class="card-top">
+            <div class="card-illustrative-icon" style="background: #FF6B8B;"><i class="fa-solid fa-highlighter"></i></div>
+            <span class="card-num">#06</span>
+          </div>
+          <h3 class="worksheet-title">Writing practice Lembar 6</h3>
+          <a href="https://drive.google.com/file/d/15SGTKjMhl6AkHRC_AAzbs4q_PXqXR7pi/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <i class="fa-solid fa-folder-open"></i> Buka Worksheet
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">
+      <i class="fa-solid fa-shapes"></i> BelajarKU
+    </div>
+    <p class="footer-text">
+      Teman belajar dan bermain anak dengan koleksi worksheet edukatif yang seru, kreatif, dan bermanfaat.
+    </p>
+    <div class="footer-copy">
+      &copy; 2026 BelajarKu by givankibooks. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP BUTTON -->
+  <a href="#" class="back-to-top" title="Kembali ke atas">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
+
+  <!-- INTERACTIVE JAVASCRIPT -->
+  <script>
+    // FUNGSI GANTI TEMA WARNA & DARK MODE
+    function setTheme(themeName, btnElement) {
+      if (themeName === 'pink') {
+        document.body.removeAttribute('data-theme');
+      } else {
+        document.body.setAttribute('data-theme', themeName);
+      }
+
+      // Update status tombol dot aktif
+      document.querySelectorAll('.theme-dot-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      if (btnElement) {
+        btnElement.classList.add('active');
+      }
+    }
+
+    // FUNGSI MENAMPILKAN CARD SESUAI KATEGORI YANG DIKLIK
+    function showCategory(categoryId, btnElement) {
+      const allSections = document.querySelectorAll('.category-section');
+      allSections.forEach(sec => {
+        sec.classList.remove('section-active');
+        sec.style.display = 'none';
+      });
+
+      const targetSection = document.getElementById(categoryId);
+      if (targetSection) {
+        targetSection.classList.add('section-active');
+        targetSection.style.display = 'block';
+
+        // Tampilkan semua kartu dalam section terpilih
+        const cards = targetSection.querySelectorAll('.worksheet-card');
+        cards.forEach(card => card.style.display = 'flex');
+
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      // Update status tombol aktif di navigasi
+      document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnElement) {
+        btnElement.classList.add('active');
+      }
+    }
+
+    // FUNGSI PENCARIAN WORKSHEET
+    function filterWorksheets() {
+      const input = document.getElementById('searchInput').value.toLowerCase().trim();
+      const sections = document.querySelectorAll('.category-section');
+
+      if (input === "") {
+        // Jika pencarian kosong, kembalikan ke kategori yang sedang aktif
+        const activeBtn = document.querySelector('.cat-btn.active');
+        if (activeBtn) {
+          activeBtn.click();
+        } else {
+          showCategory('alphabet', document.querySelector('.cat-btn'));
+        }
+        return;
+      }
+
+      // Jika ada teks pencarian, cari di seluruh kategori
+      sections.forEach(sec => {
+        const title = sec.querySelector('.cat-title').textContent.toLowerCase();
+        const cards = sec.querySelectorAll('.worksheet-card');
+        let hasMatch = false;
+
+        cards.forEach(card => {
+          const cardText = card.textContent.toLowerCase();
+          if (cardText.includes(input) || title.includes(input)) {
+            card.style.display = 'flex';
+            hasMatch = true;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (hasMatch) {
+          sec.style.display = 'block';
+        } else {
+          sec.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>givankibooks</title>
+    <!-- Font Lucu & Membulat dari Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #FF7B9C;       /* Pink Pastel */
+            --secondary: #FFC759;     /* Kuning Pastel */
+            --tertiary: #60D394;      /* Hijau Pastel */
+            --quaternary: #8ABEB7;    /* Biru-Toska Pastel */
+            --background: #FFF5F7;    /* Latar Belakang Pink Lembut */
+            --body-dot: #FFD2DC;
+            --text-dark: #4A4A4A;     /* Warna Teks */
+            --text-heading: #333333;
+            --text-muted: #666666;
+            --card-bg: #FFFFFF;       /* Latar Belakang Kartu */
+            --nav-bg: rgba(255, 255, 255, 0.78);
+            --section-bg: #FFFFFF;
+            --section-title-bg: #FFE3E9;
+            --soft-border: #FFD2DC;
+            --card-border: #FFEDF0;
+            --primary-shadow: #CC5270;
+            --secondary-shadow: #CCA047;
+            --tertiary-shadow: #4CA876;
+            --quaternary-shadow: #6E9893;
+            --hero-circle: #FFE8E8;
+        }
+
+        body[data-theme="blue"] {
+            --primary: #4D96FF;
+            --secondary: #FFD166;
+            --tertiary: #7BDFF2;
+            --quaternary: #B8B8FF;
+            --background: #EEF7FF;
+            --body-dot: #BFE3FF;
+            --section-title-bg: #DFF1FF;
+            --soft-border: #BFE3FF;
+            --card-border: #D8ECFF;
+            --primary-shadow: #2F68B8;
+            --secondary-shadow: #C99C3B;
+            --tertiary-shadow: #4CA8B8;
+            --quaternary-shadow: #8383C8;
+            --hero-circle: #DFF1FF;
+        }
+
+        body[data-theme="yellow"] {
+            --primary: #F4A261;
+            --secondary: #FFD166;
+            --tertiary: #95D5B2;
+            --quaternary: #48CAE4;
+            --background: #FFF9E8;
+            --body-dot: #FFE3A3;
+            --section-title-bg: #FFF0BE;
+            --soft-border: #FFE3A3;
+            --card-border: #FFEAB8;
+            --primary-shadow: #B9793D;
+            --secondary-shadow: #C99C3B;
+            --tertiary-shadow: #61A47E;
+            --quaternary-shadow: #2F91A4;
+            --hero-circle: #FFF0BE;
+        }
+
+        body[data-theme="green"] {
+            --primary: #2FBF71;
+            --secondary: #FFD166;
+            --tertiary: #7BDFF2;
+            --quaternary: #90BE6D;
+            --background: #EEFFF5;
+            --body-dot: #BFEFD2;
+            --section-title-bg: #D8F8E4;
+            --soft-border: #BFEFD2;
+            --card-border: #D8F5E3;
+            --primary-shadow: #21874F;
+            --secondary-shadow: #C99C3B;
+            --tertiary-shadow: #4CA8B8;
+            --quaternary-shadow: #659143;
+            --hero-circle: #D8F8E4;
+        }
+
+        body[data-theme="dark"] {
+            --primary: #FF87A7;
+            --secondary: #FFD166;
+            --tertiary: #80ED99;
+            --quaternary: #64DFDF;
+            --background: #15151F;
+            --body-dot: #2C2D3D;
+            --text-dark: #F4F6FB;
+            --text-heading: #FFFFFF;
+            --text-muted: #D6DBE8;
+            --card-bg: #242637;
+            --nav-bg: rgba(24, 25, 36, 0.86);
+            --section-bg: #1C1D2A;
+            --section-title-bg: #2D2F42;
+            --soft-border: #3A3B50;
+            --card-border: #36384D;
+            --primary-shadow: #B95673;
+            --secondary-shadow: #B58A33;
+            --tertiary-shadow: #4BAE62;
+            --quaternary-shadow: #399999;
+            --hero-circle: #2B2D40;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Fredoka', sans-serif;
+            background-color: var(--background);
+            background-image: radial-gradient(var(--body-dot) 2px, transparent 2px);
+            background-size: 30px 30px;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            padding-bottom: 0px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            width: 100%;
+            background: var(--nav-bg);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 4px dashed var(--soft-border);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #2FBF71;
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 0px rgba(47, 191, 113, 0.15);
+            animation: bounceIn 1s ease-out;
+        }
+
+        .logo svg {
+            width: 35px;
+            height: 35px;
+            animation: wobbly 3s infinite ease-in-out;
+        }
+
+        .nav-btn {
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 0px var(--primary-shadow);
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0px var(--primary-shadow);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .theme-switcher {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding: 6px;
+            border-radius: 999px;
+            background: var(--card-bg);
+            border: 2px solid var(--soft-border);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .theme-btn {
+            width: 28px;
+            height: 28px;
+            border: 2px solid rgba(74, 74, 74, 0.18);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .theme-btn:hover,
+        .theme-btn.active {
+            transform: translateY(-2px) scale(1.08);
+            border-color: var(--text-dark);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
+        }
+
+        .theme-btn[data-theme-value="pink"] { background: #FF7B9C; }
+        .theme-btn[data-theme-value="blue"] { background: #4D96FF; }
+        .theme-btn[data-theme-value="yellow"] { background: #FFD166; }
+        .theme-btn[data-theme-value="green"] { background: #2FBF71; }
+        .theme-btn[data-theme-value="dark"] {
+            background: linear-gradient(135deg, #15151F 0%, #15151F 48%, #FFD166 50%, #FFD166 100%);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 15px auto 5px;
+            padding: 0 5%;
+            gap: 24px;
+            position: relative;
+        }
+
+        .hero-text {
+            flex: 1.2;
+            animation: slideInLeft 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            color: var(--text-heading);
+            margin-bottom: 10px;
+        }
+
+        .hero-text h1 span.pink { color: var(--primary); }
+        .hero-text h1 span.green { color: var(--tertiary); }
+        .hero-text h1 span.orange { color: var(--secondary); }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 0px;
+            line-height: 1.5;
+        }
+
+        .hero-illustration {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            max-width: 350px;
+            animation: fadeInRight 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .illustration-svg {
+            width: 100%;
+            height: auto;
+            max-height: 280px;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.05));
+        }
+
+        /* PEMBATAS GELOMBANG */
+        .wave-container {
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            background: transparent;
+            margin-top: 5px;
+        }
+
+        .wave-container svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 50px;
+        }
+
+        .wave-container .shape-fill {
+            fill: var(--section-bg);
+        }
+
+        /* AREA WORKSHEET */
+        .worksheet-section {
+            background-color: var(--section-bg);
+            padding: 25px 5% 60px;
+            border-top: 1px solid var(--section-bg);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.1rem;
+            color: var(--text-heading);
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .section-title span {
+            display: inline-block;
+            transform: rotate(-1.5deg);
+            background: var(--section-title-bg);
+            padding: 6px 22px;
+            border-radius: 15px;
+            border: 3px dashed var(--primary);
+        }
+
+        /* TAB NAVIGATION */
+        .tabs-container {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 35px;
+        }
+
+        .tab-btn {
+            background: var(--card-bg);
+            border: 2px solid var(--soft-border);
+            color: var(--text-dark);
+            padding: 12px 34px;
+            border-radius: 50px;
+            font-size: 1.15rem;
+            font-family: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .tab-btn:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
+
+        .tab-btn.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 6px 0px var(--primary-shadow);
+            transform: translateY(-2px);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 22px;
+        }
+
+        /* CARDS WORKSHEET */
+        .card {
+            --card-accent: var(--primary);
+            --card-shadow: var(--primary-shadow);
+            background:
+                linear-gradient(145deg, rgba(255, 255, 255, 0.72), transparent 58%),
+                var(--card-bg);
+            border-radius: 18px;
+            padding: 18px;
+            text-align: left;
+            box-shadow: 0 14px 34px rgba(74, 74, 74, 0.08);
+            border: 1px solid color-mix(in srgb, var(--card-accent) 34%, var(--card-border));
+            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            isolation: isolate;
+        }
+
+        .card:nth-child(4n+1) { --card-accent: var(--primary); --card-shadow: var(--primary-shadow); }
+        .card:nth-child(4n+2) { --card-accent: var(--secondary); --card-shadow: var(--secondary-shadow); }
+        .card:nth-child(4n+3) { --card-accent: var(--tertiary); --card-shadow: var(--tertiary-shadow); }
+        .card:nth-child(4n+4) { --card-accent: var(--quaternary); --card-shadow: var(--quaternary-shadow); }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: color-mix(in srgb, var(--card-accent) 70%, var(--card-border));
+            box-shadow: 0 20px 40px rgba(74, 74, 74, 0.12);
+        }
+
+        .card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .card-icon {
+            width: 62px;
+            height: 62px;
+            display: grid;
+            place-items: center;
+            border-radius: 18px;
+            font-size: 2.3rem;
+            background: color-mix(in srgb, var(--card-accent) 16%, var(--card-bg));
+            box-shadow: inset 0 -4px 0 color-mix(in srgb, var(--card-accent) 18%, transparent);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-icon {
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        .card-badge {
+            color: var(--card-accent);
+            background: color-mix(in srgb, var(--card-accent) 13%, var(--card-bg));
+            border: 1px solid color-mix(in srgb, var(--card-accent) 24%, transparent);
+            border-radius: 999px;
+            padding: 6px 14px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            line-height: 1;
+            white-space: nowrap;
+            text-transform: capitalize;
+        }
+
+        .card-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+            line-height: 1.35;
+        }
+
+        .card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 16px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .card-level {
+            display: inline-flex;
+            align-items: center;
+            color: var(--card-accent);
+            font-weight: 700;
+            text-transform: capitalize;
+        }
+
+        .card-progress {
+            display: flex;
+            gap: 5px;
+        }
+
+        .card-progress span {
+            width: 18px;
+            height: 6px;
+            border-radius: 999px;
+            background: color-mix(in srgb, var(--card-accent) 18%, var(--card-border));
+        }
+
+        .card-progress span.is-filled {
+            background: var(--card-accent);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+            color: white;
+            padding: 11px 16px;
+            border-radius: 14px;
+            font-size: 0.98rem;
+            font-weight: 700;
+            width: 100%;
+            background-color: var(--card-accent);
+            box-shadow: 0 4px 0px var(--card-shadow);
+            transition: all 0.2s ease;
+            margin-top: auto;
+        }
+
+        .btn:hover {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0px var(--card-shadow);
+        }
+
+        /* FOOTER */
+        .site-footer {
+            background-color: var(--card-bg);
+            border-top: 4px dashed var(--soft-border);
+            padding: 40px 5% 35px;
+            text-align: center;
+            color: var(--text-dark);
+            margin-top: 20px;
+        }
+
+        .footer-brand {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .footer-desc {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 18px;
+            line-height: 1.5;
+        }
+
+        .footer-copy {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--soft-border);
+            padding-top: 16px;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* ANIMASI */
+        @keyframes wobbly {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(-8deg) scale(1.05); }
+            75% { transform: rotate(8deg) scale(0.95); }
+        }
+
+        @keyframes cloudFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        @keyframes pencilDance {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(15deg); }
+        }
+
+        @keyframes starBlink {
+            0%, 100% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.1); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .svg-cloud { animation: cloudFloat 4s ease-in-out infinite; }
+        .svg-pencil { animation: pencilDance 3s ease-in-out infinite; transform-origin: bottom center; }
+        .svg-palette { animation: cloudFloat 4.5s ease-in-out infinite; }
+        .svg-star { animation: starBlink 2s infinite ease-in-out; }
+        .svg-star-2 { animation: starBlink 2.5s infinite ease-in-out; }
+
+        @media (max-width: 900px) {
+            .navbar { flex-wrap: wrap; gap: 12px; padding: 15px 4%; }
+            .hero { flex-direction: column-reverse; text-align: center; gap: 15px; margin-top: 10px; }
+            .hero-text h1 { font-size: 2.1rem; }
+            .hero-illustration { width: 75%; max-width: 250px; margin: 0 auto; }
+            .grid { grid-template-columns: 1fr; }
+            .card { padding: 16px; }
+            .nav-actions { flex: 1 1 100%; justify-content: space-between; gap: 8px; }
+            .theme-switcher { order: 3; width: 100%; justify-content: center; }
+            .tabs-container { flex-direction: row; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15,80 Q15,15 50,15 T85,15 V80 Q85,15 50,22 T15,80" fill="#2FBF71" stroke="#4A4A4A" stroke-width="4"/>
+                <path d="M50,15 V82" stroke="#4A4A4A" stroke-width="4"/>
+                <path d="M20,78 Q20,20 50,22" fill="none" stroke="white" stroke-width="3"/>
+                <circle cx="35" cy="40" r="4" fill="black" />
+                <circle cx="65" cy="40" r="4" fill="black" />
+                <path d="M45,50 Q50,55 55,50" fill="none" stroke="black" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            BelajarKU
+        </a>
+        <div class="nav-actions">
+            <div class="theme-switcher" aria-label="Pilih tema warna">
+                <button type="button" class="theme-btn active" data-theme-value="pink" aria-label="Tema pink"></button>
+                <button type="button" class="theme-btn" data-theme-value="blue" aria-label="Tema biru"></button>
+                <button type="button" class="theme-btn" data-theme-value="yellow" aria-label="Tema kuning"></button>
+                <button type="button" class="theme-btn" data-theme-value="green" aria-label="Tema hijau"></button>
+                <button type="button" class="theme-btn" data-theme-value="dark" aria-label="Dark mode"></button>
+            </div>
+            <a href="#belajar" class="nav-btn">Mulai Belajar 🚀</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-text">
+            <h1>Halo <span class="pink">Anak Hebat!</span><br>Yuk <span class="green">Belajar</span> Sambil <span class="orange">Bermain</span> ✨</h1>
+            <p>Dapatkan puluhan koleksi worksheet seru, edukatif, untuk mengasah kreativitas sikecil secara mandiri!</p>
+        </div>
+
+        <div class="hero-illustration">
+            <svg class="illustration-svg" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="250" cy="220" r="140" fill="var(--hero-circle)" opacity="0.6"/>
+                <path d="M160,180 A 110,110 0 0,1 340,180" stroke="#FF7B9C" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+                <path d="M175,180 A 90,90 0 0,1 325,180" stroke="#FFC759" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+                <path d="M190,180 A 70,70 0 0,1 310,180" stroke="#60D394" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+
+                <path class="svg-star" d="M110,100 L115,115 L130,115 L118,125 L122,140 L110,130 L98,140 L102,125 L90,115 L105,115 Z" fill="#FFC759"/>
+                <path class="svg-star-2" d="M380,80 L383,89 L392,89 L385,95 L388,104 L380,98 L372,104 L375,95 L368,89 L377,89 Z" fill="#60D394"/>
+                <circle class="svg-star" cx="130" cy="270" r="6" fill="#8ABEB7"/>
+                <circle class="svg-star-2" cx="370" cy="280" r="5" fill="#FF7B9C"/>
+
+                <g class="svg-cloud">
+                    <path d="M120,240 Q110,270 140,290 T250,300 T360,290 T380,240 Z" fill="#D7CCC8" />
+                    <path d="M120,240 Q110,255 140,265 T250,270 T360,265 T380,240 Z" fill="#8D6E63" />
+                    <path d="M100,240 C100,220 130,210 150,220 C160,200 200,190 220,210 C240,190 280,195 300,215 C320,198 360,200 370,220 C390,220 405,235 400,250 C400,265 380,275 360,270 C340,280 290,285 250,280 C210,285 160,280 140,270 C110,275 100,260 100,240 Z" fill="#F4F9F9"/>
+                    <circle cx="230" cy="255" r="3" fill="#4A4A4A"/>
+                    <circle cx="270" cy="255" r="3" fill="#4A4A4A"/>
+                    <path d="M246,262 Q250,265 254,262" stroke="#4A4A4A" stroke-width="2" fill="none" stroke-linecap="round"/>
+                </g>
+
+                <g class="svg-cloud">
+                    <path d="M150,210 Q145,150 200,140 T250,145 T300,140 T350,210 Q300,155 250,160 T150,210 Z" fill="#FF7B9C" stroke="#4A4A4A" stroke-width="4"/>
+                    <path d="M160,205 Q155,155 205,145 T250,150 T295,145 T340,205 Q295,160 250,165 T160,205 Z" fill="#FFFFFF" stroke="#4A4A4A" stroke-width="3"/>
+                    <path d="M250,150 V215" stroke="#4A4A4A" stroke-width="3"/>
+                    <rect x="180" y="165" width="20" height="20" rx="3" fill="#FFE0B2"/>
+                    <circle cx="190" cy="175" r="4" fill="#FFB74D"/>
+                    <line x1="175" y1="190" x2="230" y2="190" stroke="#BDBDBD" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="175" y1="198" x2="215" y2="198" stroke="#BDBDBD" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="265" y1="165" x2="320" y2="165" stroke="#BDBDBD" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="265" y1="173" x2="310" y2="173" stroke="#BDBDBD" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="265" y1="181" x2="325" y2="181" stroke="#BDBDBD" stroke-width="3" stroke-linecap="round"/>
+                </g>
+
+                <g class="svg-pencil">
+                    <rect x="110" y="130" width="18" height="60" rx="4" fill="#FFC759" stroke="#4A4A4A" stroke-width="3" transform="rotate(-15, 120, 150)"/>
+                    <path d="M110,130 L119,115 L128,130 Z" fill="#FFE082" stroke="#4A4A4A" stroke-width="3" transform="rotate(-15, 120, 150)"/>
+                    <path d="M116,115 L119,109 L122,115 Z" fill="#3E2723" transform="rotate(-15, 120, 150)"/>
+                    <rect x="110" y="180" width="18" height="10" rx="2" fill="#FF7B9C" stroke="#4A4A4A" stroke-width="3" transform="rotate(-15, 120, 150)"/>
+                    <circle cx="114" cy="150" r="2.5" fill="black"/>
+                    <circle cx="122" cy="148" r="2.5" fill="black"/>
+                    <path d="M116,155 Q118,158 121,155" stroke="black" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    <path d="M102,150 Q95,152 101,156" stroke="#4A4A4A" stroke-width="2" stroke-linecap="round" fill="none"/>
+                    <path d="M135,145 Q142,143 140,150" stroke="#4A4A4A" stroke-width="2" stroke-linecap="round" fill="none"/>
+                </g>
+
+                <g class="svg-palette">
+                    <path d="M305,210 C305,190 350,180 365,195 C380,210 380,240 350,240 C330,240 315,225 305,210 Z" fill="#FFCC80" stroke="#4A4A4A" stroke-width="3"/>
+                    <circle cx="345" cy="200" r="6" fill="#60D394"/>
+                    <circle cx="365" cy="210" r="6" fill="#FF7B9C"/>
+                    <circle cx="355" cy="225" r="6" fill="#8ABEB7"/>
+                    <circle cx="320" cy="220" r="7" fill="#FFF5F7" stroke="#4A4A4A" stroke-width="2"/>
+                    <path d="M370,225 L385,185" stroke="#4A4A4A" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M385,185 L390,175" stroke="#8D6E63" stroke-width="6" stroke-linecap="round"/>
+                    <path d="M390,175 L393,170" stroke="#FF7B9C" stroke-width="5" stroke-linecap="round"/>
+                </g>
+            </svg>
+        </div>
+    </header>
+
+    <!-- PEMBATAS GELOMBANG -->
+    <div class="wave-container">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0 Q300,100 600,40 T1200,80 V120 H0 Z" class="shape-fill"></path>
+        </svg>
+    </div>
+
+    <!-- AREA UTAMA WORKSHEET -->
+    <main id="belajar" class="worksheet-section">
+        <h2 class="section-title"><span>🌟 Kumpulan Worksheet ✨</span></h2>
+
+        <!-- DUA TAB MENU: COLORING & ACTIVITY -->
+        <div class="tabs-container">
+            <button class="tab-btn active" onclick="openTab('coloring', this)">🎨 Coloring</button>
+            <button class="tab-btn" onclick="openTab('activity', this)">🧩 Activity</button>
+        </div>
+
+        <div class="container">
+            
+            <!-- TAB COLORING -->
+            <div id="tab-coloring" class="tab-content active">
+                <div class="grid">
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🚗</span></div>
+                        <h3 class="card-title">Mewarnai Transportasi</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1TFkWVYX9WiYe3-2dDxA2N1fzDyTTh-A_/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🏫</span></div>
+                        <h3 class="card-title">Mewarnai Tempat</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1mxxxtOee_mOr6Gdq0JKLPh0BNmu1HDeO/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🥕</span></div>
+                        <h3 class="card-title">Mewarnai Sayuran</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1N03A8aKJZWKcFkeB2o7nBsFtTAS1CfAa/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">👨‍🚒</span></div>
+                        <h3 class="card-title">Mewarnai Profesi</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1UrsQWtaVQbXHo6kgqq8ooFs-1q0zYsWQ/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🪐</span></div>
+                        <h3 class="card-title">Mewarnai Planet</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/14AQ3O5-smMScWqqodi5lADm4eR0SrIGj/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🦁</span></div>
+                        <h3 class="card-title">Mewarnai Hewan</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1UK1_UkJwmcCN2ONS_WB7eFMlOouy-Hqg/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🐬</span></div>
+                        <h3 class="card-title">Mewarnai Hewan Laut</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1LzfbBqtJlSP9b1GAFW4c53HxJrZku8GV/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🌸</span></div>
+                        <h3 class="card-title">Mewarnai Bunga</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/19lino0a5Zb6pvNzQybpxgs-dXJ2Twso6/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🍎</span></div>
+                        <h3 class="card-title">Mewarnai Buah</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/13a_SUZKnNfA3PGuPfxRJhes7BpblkmZs/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">📦</span></div>
+                        <h3 class="card-title">Mewarnai Benda</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1i_YIjfphO-lAYH2budt99wUtdUHQkIh5/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🚆</span></div>
+                        <h3 class="card-title">Mewarnai Transportasi</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1YrxkEXDhsqzFvLMXm8TwMXl9RH69S3In/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">❓</span></div>
+                        <h3 class="card-title">Mewarnai Tebak Gambar</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1KlgfqmJGyOgDUD2YFg0tKkem5NAE8Fd6/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">☀️</span></div>
+                        <h3 class="card-title">Mewarnai Tata Surya</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1s1Gk7fHK08kgoj8Z_APB60F-pCgvIFnl/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🥦</span></div>
+                        <h3 class="card-title">Mewarnai Sayuran</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1H2nn3Vqqj_uFY5zDWJNch4iqkDEYQMmM/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">👮</span></div>
+                        <h3 class="card-title">Mewarnai Profesi</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1pCMr78ZJNqIpB-u67vQ5X7Uvc3KP_zsD/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🐙</span></div>
+                        <h3 class="card-title">Mewarnai Hewan Laut</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1S0HBEUUuGh72kqonIvK0kxVtCrjdkIZh/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🐯</span></div>
+                        <h3 class="card-title">Mewarnai Hewan 1</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1j4IbS2E2bJ7798NIK7qHgX8ymQ2xvgLW/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🐻</span></div>
+                        <h3 class="card-title">Mewarnai Hewan 2</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1MnD3gZZrkawrDrFI2iQghp90RWIUrSyQ/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🐼</span></div>
+                        <h3 class="card-title">Mewarnai Hewan 3</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1xehi7Pq8m_alBp_o63tvOjrrFNK6xTI0/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🦜</span></div>
+                        <h3 class="card-title">Mewarnai Burung</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1vfGuv1LcitaqqksUwDsECkfQCj_A9AmI/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🍓</span></div>
+                        <h3 class="card-title">Mewarnai Buah 1</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1YOfdSWhoa-rxEOEkq_C6Q4De1OKQARVe/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🍌</span></div>
+                        <h3 class="card-title">Mewarnai Buah 2</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1ymWsskaTKZpOwps-WVpc2D5HohO_m6zp/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🍇</span></div>
+                        <h3 class="card-title">Mewarnai Buah 3</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/10kvpuFJeLEwi3SHTe9PaR5YkA4kv3_K9/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">👘</span></div>
+                        <h3 class="card-title">Mewarnai Pakaian Adat Indonesia</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1YUzRSzvN-AFehuPUsjmZr2lShtYBdanA/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">⚽</span></div>
+                        <h3 class="card-title">Mewarnai Olahraga</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/14Hm8d0vBaMA6U4sLAoHaiVerXn-Ysm6w/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🕌</span></div>
+                        <h3 class="card-title">Mewarnai Islam</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1hGcgXd6QH8Q0RNQNeJx1Q0ITPeyqRzBi/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🥬</span></div>
+                        <h3 class="card-title">Mewarnai Sayur 1</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1JazI_WpxjXTL15zv9TqHmS2ALFxYiDeB/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🍆</span></div>
+                        <h3 class="card-title">Mewarnai Sayur 2</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1b0zsAtqWE_SEtUwO8j_rOP6OKxwEgIEH/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🍅</span></div>
+                        <h3 class="card-title">Mewarnai Sayur 3</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1JoyZFDRGIDjU-X_gm2KPO89c9p0sL_vi/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🌽</span></div>
+                        <h3 class="card-title">Mewarnai Sayur 4</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/15bMbh3R2Esgahih5jrlJzSh7yuTJmtux/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🌳</span></div>
+                        <h3 class="card-title">Mewarnai Pohon</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1tmjuTiRVUhcE7iHmWexslJLWZXemEZ-D/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🗺️</span></div>
+                        <h3 class="card-title">Mewarnai Peta</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1FFeytsV6ll10oHerG8_aVspF35mo8CVE/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🍔</span></div>
+                        <h3 class="card-title">Mewarnai Makanan 1</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1hWMU1KsZDkIPvQU7wiQei5WLa9bJoBIA/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🍕</span></div>
+                        <h3 class="card-title">Mewarnai Makanan 2</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1b5pLmNvlDPZvJNDxNmnSZrHdrndBSCm8/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🚗</span></div>
+                        <h3 class="card-title">Mewarnai Kendaraan 1</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1vYqeH9vZ6KIi0r3-v-Mx17OnD0rxgXXI/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">✈️</span></div>
+                        <h3 class="card-title">Mewarnai Kendaraan 2</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1qYcGE_sxeHSlZSs88Co-ZULxe3jPsX7Z/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🚢</span></div>
+                        <h3 class="card-title">Mewarnai Kendaraan 3</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1D7l506c1DxHA6dCUFI-pIn4FMVC3Whot/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🇮🇩</span></div>
+                        <h3 class="card-title">Mewarnai Indonesia</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/11k7mvuBx9CxeyKtvk8kBDxLGkyoo7ZCn/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🐘</span></div>
+                        <h3 class="card-title">Mewarnai Hewan</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1vzH4F1cvcBANSJb7cTUAbDGBc_hP7h6-/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🦒</span></div>
+                        <h3 class="card-title">Mewarnai Hewan</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1YNQG91Si6SqUf7BkoVrX1DK0trEzknj7/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🦓</span></div>
+                        <h3 class="card-title">Mewarnai Hewan</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1vtItLH6OLHAQAZ_R_FgKUZvHJXGrR2oF/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🦏</span></div>
+                        <h3 class="card-title">Mewarnai Hewan</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/16oKfqVhS00w8BCYKlTZs8C-70rSQLQH1/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🦘</span></div>
+                        <h3 class="card-title">Mewarnai Hewan</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1LlpiqrZeX-AJUwrWBgiQq9BTKDOHDq8U/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🐒</span></div>
+                        <h3 class="card-title">Mewarnai Hewan</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/11-tcgOZ3IWp_TMgTlliQ8MOvo6gEYDcO/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🐺</span></div>
+                        <h3 class="card-title">Mewarnai Hewan</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1JSewz9yDBPcebiaANgmrr5PZmmEuTvQW/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🦊</span></div>
+                        <h3 class="card-title">Mewarnai Hewan</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1-mU78SZbMo7i44VQWb2IXxw6lQ4i7NW7/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🐨</span></div>
+                        <h3 class="card-title">Mewarnai Hewan</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1gEg1Sg0BUsXXZMWBtjcdm9Iojf_mRkCT/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🏢</span></div>
+                        <h3 class="card-title">Mewarnai Gedung</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1J8cfmWpWAvSluHvH7EBTm2HIDbzvGoE7/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🌻</span></div>
+                        <h3 class="card-title">Mewarnai Bunga</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1m0PSyLfDWw2ShTKX4weCjkY4kdQlA7xR/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🌹</span></div>
+                        <h3 class="card-title">Mewarnai Bunga</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1Wdf4RZSbq_AvUQDu_VXGqwzCRqjPJGun/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🌷</span></div>
+                        <h3 class="card-title">Mewarnai Bunga</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1ap3Dd2P7Fj4UddpF8aiHQ_H6ylW6dY0F/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🌺</span></div>
+                        <h3 class="card-title">Mewarnai Bunga</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1YBPirHfk_kM69sJ03_9n00jZUPDWfX0J/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🍉</span></div>
+                        <h3 class="card-title">Mewarnai Buah</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1v2YQiscq4Q_3Yw0qXz0_9Z_fx_LdMvHG/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🍍</span></div>
+                        <h3 class="card-title">Mewarnai Buah</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1QJRSYvCAfJcC2lAeSHSq9AztUMb74ZPB/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🥭</span></div>
+                        <h3 class="card-title">Mewarnai Buah</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1ukjchVzPDscACJ_oLTADykZ2JqpMBiqJ/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🍑</span></div>
+                        <h3 class="card-title">Mewarnai Buah</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/12_PNwOwUGZQ-PGsv4DWwr6QdV8IjmhTu/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🍒</span></div>
+                        <h3 class="card-title">Mewarnai Buah</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1mjd8MSFpCCTSb1zDIjHMyC0jriwwTs3D/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🥝</span></div>
+                        <h3 class="card-title">Mewarnai Buah</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1IwycrGH5KjtThgDBxCUpnOuzxaw5qFBr/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🧸</span></div>
+                        <h3 class="card-title">Mewarnai Boneka</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1QoRt7_sehCLCR0-plLViBvtbnMz0NfOl/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🐴</span></div>
+                        <h3 class="card-title">Mewarnai Binatang</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1DpxM9UOtRLD5suDn01fy3ca7iSV-aUp4/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🐫</span></div>
+                        <h3 class="card-title">Mewarnai Binatang</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1wI4AFEf_FQK1GkSHJ14VpxlwLDYTj3_m/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🚩</span></div>
+                        <h3 class="card-title">Mewarnai Bendera</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1Fdz957h29PwDV5DyRcIU7DKeQMnicid5/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🏛️</span></div>
+                        <h3 class="card-title">Mewarnai Bangunan</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1zezP8mc4Mfg1rvTbBmLz3SBIA8kCuVAJ/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">👨‍🚀</span></div>
+                        <h3 class="card-title">Mewarnai Astronot</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1UUQuKuMRMyXU7yNsoaMMYHBmKOH29rMW/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🦔</span></div>
+                        <h3 class="card-title">Mewarnai Hewan</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1gu_J0k7vEsRN0hq_w8jC_Z5_Bowzh56N/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🎸</span></div>
+                        <h3 class="card-title">Mewarnai Alat Musik</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1XGyroSYs7i4MMcx2JwRr_658ikqt4NYZ/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🎹</span></div>
+                        <h3 class="card-title">Mewarnai Alat Musik</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1nvW84AMJ9NuYzH96By4cZR0TGsE4ad9j/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">📺</span></div>
+                        <h3 class="card-title">Mewarnai Alat Elektronik</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1_fM15apMoE27G-RoM8UM2U4CihPtUVnI/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🚜</span></div>
+                        <h3 class="card-title">Mewarnai Alat Berat</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1-iUs4RqAg0_IMC__dQ0sda2MIsrs3MBz/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">❓</span></div>
+                        <h3 class="card-title">Mewarnai Tebak Gambar</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/19WPOs1Blf-0Q3_32jUxtkqeSs7ZFp8il/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🥒</span></div>
+                        <h3 class="card-title">Mewarnai Sayuran</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1bu7N6UzCi-WcdRUHILmMrwgDYKPgGNzC/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">👩‍🏫</span></div>
+                        <h3 class="card-title">Mewarnai Profesi</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1Ys3Hw37I292IOAcqIoN7OmRmw_KowibN/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">👨‍⚕️</span></div>
+                        <h3 class="card-title">Mewarnai Profesi</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1q74hDUBUYxyb657goWvMRIeazEtGN78D/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🍈</span></div>
+                        <h3 class="card-title">Mewarnai Buah</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1d2Gj8KsWbJuSmq3Lr218B-UaVxFzTZZM/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🍊</span></div>
+                        <h3 class="card-title">Mewarnai Buah</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1VUDOd7BYFYeYdkfuEglPc3m9vpO9nf1H/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🐔</span></div>
+                        <h3 class="card-title">Mewarnai Unggas</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1fQwrWqGAlnk65besuy3Gfg9sC56IVWGI/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🚌</span></div>
+                        <h3 class="card-title">Mewarnai Kendaraan</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/15LXyOpQhN7-UWpfhEE9oeKHY5SnxNCh2/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🥥</span></div>
+                        <h3 class="card-title">Mewarnai Kelapa</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1b8YP7D2LJYLdaoIrZlOZdNMaJvxAdBv_/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🦈</span></div>
+                        <h3 class="card-title">Mewarnai Hewan Laut</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1PKDtoYwuS_mYJQyms17uf5F2G6xi3UyA/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🦥</span></div>
+                        <h3 class="card-title">Mewarnai Hewan</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1d65I_KE3TFhC5Ek_psuQgx7S253UlXbJ/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🦨</span></div>
+                        <h3 class="card-title">Mewarnai Hewan</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1QNWgZxp_iMFT8xBMgGcHOdktHYw8Ycu6/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🦌</span></div>
+                        <h3 class="card-title">Mewarnai Hewan Herbivora</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1QQBp6H9V9k8RF2E0e0PKFYypVyCbzyIc/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🐆</span></div>
+                        <h3 class="card-title">Mewarnai Hewan Buas</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/16KnidEQ5UgY3I5VXYdqyCDAgRywbI-nz/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🍐</span></div>
+                        <h3 class="card-title">Mewarnai Buah</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1LfMrYLX2USY2M-REdihUb1c2jE0qqPp0/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🌼</span></div>
+                        <h3 class="card-title">Mewarnai Bunga</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1sr4uOy0zt925ZqPzBFe8at0VY6Q06sgh/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🍋</span></div>
+                        <h3 class="card-title">Mewarnai Buah</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/18iw7yEM1j-5WR8wU9X9M6sFz0H-tBul4/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🐳</span></div>
+                        <h3 class="card-title">Mewarnai Hewan Laut</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1QofLTnutGnMeutHy6hre7MjmZGVqjB-9/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🦁</span></div>
+                        <h3 class="card-title">Mewarnai Hewan Buas & Jinak</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/17icie5FrWw4V_rw5xIaTrt4QJTdfyc01/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🐰</span></div>
+                        <h3 class="card-title">Mewarnai Hewan Buas & Jinak</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1FB2yaKj5njBl2h7dOovoFptP0m4hgGPL/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🛋️</span></div>
+                        <h3 class="card-title">Mewarnai Benda Dirumah</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1VOyesYdNq-eBot1feK1QjTiJk1IWt2m2/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🍎</span></div>
+                        <h3 class="card-title">Mewarnai Buah</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1OuFMmz2i57xIZLRTXYet9WimB_-r5_dP/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🪑</span></div>
+                        <h3 class="card-title">Mewarnai Barang Dirumah</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1YnJjn3spXrJCubSU55vbC54sXbRdhmff/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🏰</span></div>
+                        <h3 class="card-title">Mewarnai Bangunan</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1fCei24r5mKp8vgZ0jOEJmtocFtcHAdvz/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🦫</span></div>
+                        <h3 class="card-title">Mewarnai Hewan</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1wZiAHn2mUEOwNu56j97LRsRTxVVHC0bu/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🦦</span></div>
+                        <h3 class="card-title">Mewarnai Hewan</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/12UFUxei6Yy2PEnFRApGoiztT93ow3GTm/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🦡</span></div>
+                        <h3 class="card-title">Mewarnai Hewan</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1iNQvyQTaeYmsPCLULgAUIEjOA7RzC2cb/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🎻</span></div>
+                        <h3 class="card-title">Mewarnai Alat Musik</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1e8yfE7sZoTTSAzXac1f6p0JacOpSzZMA/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🧑‍🌾</span></div>
+                        <h3 class="card-title">Mewarnai Alat Kebun</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1_gI7BQw6lOVxbqF-TKSe_6Tc7cZ0NaFi/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🏗️</span></div>
+                        <h3 class="card-title">Mewarnai Alat Berat</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1LrViVCqZxSdUkMw-CbUUyztiQP45zsse/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🎒</span></div>
+                        <h3 class="card-title">Mewarnai Alat Sekolah</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1Z5nhnoy5TicmQjTxzcJ6BiBG0VBE19WJ/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-top"><span class="card-icon">🦖</span></div>
+                        <h3 class="card-title">Mewarnai Dinosaurus</h3>
+                        <div class="card-meta"><span class="card-level">Seru</span><div class="card-progress"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></div>
+                        <a href="https://drive.google.com/file/d/1BDqiSZnzcmB5nzNycfy8m-IvLlkAgwDo/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB ACTIVITY -->
+            <div id="tab-activity" class="tab-content">
+                <div class="grid">
+                    
+                    <div class="card">
+                        <div class="card-top">
+                            <span class="card-icon">✍️</span>
+                            <span class="card-badge">Fokus</span>
+                        </div>
+                        <h3 class="card-title">Tracking Line</h3>
+                        <div class="card-meta">
+                            <span class="card-level">Tantangan</span>
+                            <div class="card-progress">
+                                <span class="is-filled"></span><span class="is-filled"></span><span></span>
+                            </div>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1X5XPpqqn6FCj15_OyAM2uZ_81fbBd0og/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-top">
+                            <span class="card-icon">🥦</span>
+                            <span class="card-badge">Bentuk</span>
+                        </div>
+                        <h3 class="card-title">Seri Sayur-Sayuran</h3>
+                        <div class="card-meta">
+                            <span class="card-level">Seru</span>
+                            <div class="card-progress">
+                                <span class="is-filled"></span><span class="is-filled"></span><span></span>
+                            </div>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1xKtn6HApndUZAREdyjMey3fBIG6vfoiB/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-top">
+                            <span class="card-icon">👨‍🚒</span>
+                            <span class="card-badge">Logika</span>
+                        </div>
+                        <h3 class="card-title">Seri Profesi</h3>
+                        <div class="card-meta">
+                            <span class="card-level">Seru</span>
+                            <div class="card-progress">
+                                <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+                            </div>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1-JAPDS2yz4Qrh0a80AOPWsdS5Q8rbOec/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-top">
+                            <span class="card-icon">⏰</span>
+                            <span class="card-badge">Fokus</span>
+                        </div>
+                        <h3 class="card-title">Seri Mengenal Waktu</h3>
+                        <div class="card-meta">
+                            <span class="card-level">Seru</span>
+                            <div class="card-progress">
+                                <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+                            </div>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1pv-TY0E-umMRcYq3HufJBG3lnVjgjFX7/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-top">
+                            <span class="card-icon">🏢</span>
+                            <span class="card-badge">Fokus</span>
+                        </div>
+                        <h3 class="card-title">Seri Mengenal Tempat</h3>
+                        <div class="card-meta">
+                            <span class="card-level">Seru</span>
+                            <div class="card-progress">
+                                <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+                            </div>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1AH2dkLNeCJxndC8bfvo6eqT8ypG4rh5C/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-top">
+                            <span class="card-icon">🍎</span>
+                            <span class="card-badge">Bentuk</span>
+                        </div>
+                        <h3 class="card-title">Seri Mengenal Buah</h3>
+                        <div class="card-meta">
+                            <span class="card-level">Mudah</span>
+                            <div class="card-progress">
+                                <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+                            </div>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1-kjEpCtcwBwGNKxW5wVMbjIVBetM82mg/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-top">
+                            <span class="card-icon">🖐️</span>
+                            <span class="card-badge">Bentuk</span>
+                        </div>
+                        <h3 class="card-title">Seri Mengenal Anggota Tubuh</h3>
+                        <div class="card-meta">
+                            <span class="card-level">Mudah</span>
+                            <div class="card-progress">
+                                <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+                            </div>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1hGpJJ-fhGwM1apNLk9iSPbe1kNM_BDH5/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-top">
+                            <span class="card-icon">🚗</span>
+                            <span class="card-badge">Bentuk</span>
+                        </div>
+                        <h3 class="card-title">Seri Kendaraan</h3>
+                        <div class="card-meta">
+                            <span class="card-level">Mudah</span>
+                            <div class="card-progress">
+                                <span class="is-filled"></span><span class="is-filled"></span><span></span>
+                            </div>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1jKdRElBkILDXI7QsnlmMyXeBBEJuRAES/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-top">
+                            <span class="card-icon">🍊</span>
+                            <span class="card-badge">Bentuk</span>
+                        </div>
+                        <h3 class="card-title">Seri Buah-Buahan</h3>
+                        <div class="card-meta">
+                            <span class="card-level">Mudah</span>
+                            <div class="card-progress">
+                                <span class="is-filled"></span><span class="is-filled"></span><span></span>
+                            </div>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1zFmggatKqXO4lZ7m1H62gWludQa_DvD6/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-top">
+                            <span class="card-icon">🔢</span>
+                            <span class="card-badge">Fokus</span>
+                        </div>
+                        <h3 class="card-title">Seri Berhitung</h3>
+                        <div class="card-meta">
+                            <span class="card-level">Tantangan</span>
+                            <div class="card-progress">
+                                <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+                            </div>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1h0m7hYcSY9SUCK7LRDzXFoF4bRlYTu_O/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-top">
+                            <span class="card-icon">📦</span>
+                            <span class="card-badge">Fokus</span>
+                        </div>
+                        <h3 class="card-title">Seri Benda di Sekitar Kita</h3>
+                        <div class="card-meta">
+                            <span class="card-level">Mudah</span>
+                            <div class="card-progress">
+                                <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+                            </div>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1LCivXVcqXIOVdPSVA6ODtPCl3FKiOMly/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-top">
+                            <span class="card-icon">🔤</span>
+                            <span class="card-badge">Menulis</span>
+                        </div>
+                        <h3 class="card-title">Seri Alfabet</h3>
+                        <div class="card-meta">
+                            <span class="card-level">Mudah</span>
+                            <div class="card-progress">
+                                <span class="is-filled"></span><span class="is-filled"></span><span></span>
+                            </div>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1qHicEHYmau_n8t-rzxeLbrUW9us_5D9i/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-top">
+                            <span class="card-icon">🤝</span>
+                            <span class="card-badge">Fokus</span>
+                        </div>
+                        <h3 class="card-title">Perbuatan Terpuji</h3>
+                        <div class="card-meta">
+                            <span class="card-level">Seru</span>
+                            <div class="card-progress">
+                                <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+                            </div>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1Sj6Ynf4dPRzVoA4Rd8cCv6VfKMFQwdZw/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-top">
+                            <span class="card-icon">🧩</span>
+                            <span class="card-badge">Menulis</span>
+                        </div>
+                        <h3 class="card-title">Menyusun Kata</h3>
+                        <div class="card-meta">
+                            <span class="card-level">Seru</span>
+                            <div class="card-progress">
+                                <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+                            </div>
+                        </div>
+                        <a href="https://drive.google.com/file/d/13Y9T02HqP2iIXyRxvLB9GHwjTR-jGf35/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-top">
+                            <span class="card-icon">🌀</span>
+                            <span class="card-badge">Kreatif</span>
+                        </div>
+                        <h3 class="card-title">Labirin</h3>
+                        <div class="card-meta">
+                            <span class="card-level">Tantangan</span>
+                            <div class="card-progress">
+                                <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+                            </div>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1MXkXCsf4qUFEd213kTMFQ8why7YI7UMS/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-top">
+                            <span class="card-icon">🎮</span>
+                            <span class="card-badge">Kreatif</span>
+                        </div>
+                        <h3 class="card-title">Games Angka</h3>
+                        <div class="card-meta">
+                            <span class="card-level">Seru</span>
+                            <div class="card-progress">
+                                <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+                            </div>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1NWDBScx3ELAn8ng4yjljxcfk7oKnMe9w/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-top">
+                            <span class="card-icon">✏️</span>
+                            <span class="card-badge">Menulis</span>
+                        </div>
+                        <h3 class="card-title">Melengkapi Kata</h3>
+                        <div class="card-meta">
+                            <span class="card-level">Tantangan</span>
+                            <div class="card-progress">
+                                <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+                            </div>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1XNxCy_4bfRYC3o3jSCD071KlJeGD_LbW/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-top">
+                            <span class="card-icon">🔢</span>
+                            <span class="card-badge">Fokus</span>
+                        </div>
+                        <h3 class="card-title">Tracing & Coloring</h3>
+                        <div class="card-meta">
+                            <span class="card-level">Tantangan</span>
+                            <div class="card-progress">
+                                <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+                            </div>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1KjkPTdjdjBZ5uLqliVozT8UVMG64kJDy/view?usp=drive_link" target="_blank" class="btn">Klik disini →</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <h3 class="footer-brand">BELAJARKU</h3>
+        <p class="footer-desc">Produk digital untuk belajar, berkarya, dan berkembang lebih mudah.</p>
+        <p class="footer-copy">© 2026 BelajarKu by Givanki Books. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Tema Warna
+        const themeButtons = document.querySelectorAll('.theme-btn');
+        const savedTheme = localStorage.getItem('givanki-theme') || 'pink';
+
+        function setTheme(theme) {
+            document.body.dataset.theme = theme;
+            localStorage.setItem('givanki-theme', theme);
+            themeButtons.forEach((button) => {
+                button.classList.toggle('active', button.dataset.themeValue === theme);
+            });
+        }
+
+        themeButtons.forEach((button) => {
+            button.addEventListener('click', () => setTheme(button.dataset.themeValue));
+        });
+
+        setTheme(savedTheme);
+
+        // Tab Switching Logic
+        function openTab(tabName, clickedBtn) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(`tab-${tabName}`).classList.add('active');
+            clickedBtn.classList.add('active');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | givankibooks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #FF7B9C;
+      --primary-hover: #ff5f87;
+      --secondary: #FFC759;
+      --tertiary: #60D394;
+      --quaternary: #4D96FF;
+      --background: #FFF5F7;
+      --body-dot: #FFD2DC;
+      --card-bg: #FFFFFF;
+      --card-inner: #FFF8FA;
+      --text-heading: #333333;
+      --text-dark: #4A4A4A;
+      --text-muted: #6B7280;
+      --soft-border: #FFD2DC;
+      --card-border: #FFEDF0;
+      --nav-bg: rgba(255, 255, 255, 0.82);
+      --primary-shadow: #CC5270;
+      --secondary-shadow: #C99C3B;
+      --focus-ring: rgba(255, 123, 156, 0.24);
+    }
+
+    body[data-theme="blue"] {
+      --primary: #4D96FF;
+      --primary-hover: #347ff0;
+      --secondary: #FFD166;
+      --tertiary: #7BDFF2;
+      --quaternary: #B8B8FF;
+      --background: #EEF7FF;
+      --body-dot: #BFE3FF;
+      --card-inner: #F7FBFF;
+      --soft-border: #BFE3FF;
+      --card-border: #D8ECFF;
+      --primary-shadow: #2F68B8;
+      --focus-ring: rgba(77, 150, 255, 0.22);
+    }
+
+    body[data-theme="yellow"] {
+      --primary: #F4A261;
+      --primary-hover: #e88d45;
+      --secondary: #FFD166;
+      --tertiary: #95D5B2;
+      --quaternary: #48CAE4;
+      --background: #FFF9E8;
+      --body-dot: #FFE3A3;
+      --card-inner: #FFFDF5;
+      --soft-border: #FFE3A3;
+      --card-border: #FFEAB8;
+      --primary-shadow: #B9793D;
+      --focus-ring: rgba(244, 162, 97, 0.24);
+    }
+
+    body[data-theme="green"] {
+      --primary: #2FBF71;
+      --primary-hover: #249e5d;
+      --secondary: #FFD166;
+      --tertiary: #7BDFF2;
+      --quaternary: #90BE6D;
+      --background: #EEFFF5;
+      --body-dot: #BFEFD2;
+      --card-inner: #F7FFFA;
+      --soft-border: #BFEFD2;
+      --card-border: #D8F5E3;
+      --primary-shadow: #21874F;
+      --focus-ring: rgba(47, 191, 113, 0.22);
+    }
+
+    body[data-theme="dark"] {
+      --primary: #FF87A7;
+      --primary-hover: #ff6d94;
+      --secondary: #FFD166;
+      --tertiary: #80ED99;
+      --quaternary: #64DFDF;
+      --background: #15151F;
+      --body-dot: #2C2D3D;
+      --card-bg: #242637;
+      --card-inner: #1C1D2A;
+      --text-heading: #FFFFFF;
+      --text-dark: #F4F6FB;
+      --text-muted: #D6DBE8;
+      --soft-border: #3A3B50;
+      --card-border: #36384D;
+      --nav-bg: rgba(24, 25, 36, 0.86);
+      --primary-shadow: #B95673;
+      --secondary-shadow: #B58A33;
+      --focus-ring: rgba(255, 135, 167, 0.24);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Nunito', sans-serif;
+      color: var(--text-dark);
+      background-color: var(--background);
+      background-image:
+        radial-gradient(var(--body-dot) 1.8px, transparent 1.8px),
+        radial-gradient(rgba(255, 255, 255, 0.55) 1.4px, transparent 1.4px);
+      background-size: 30px 30px, 42px 42px;
+      background-position: 0 0, 14px 14px;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      width: 100%;
+      padding: 15px 5%;
+      background: var(--nav-bg);
+      border-bottom: 4px dashed var(--soft-border);
+      backdrop-filter: blur(8px);
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--primary);
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+      font-weight: 700;
+      text-decoration: none;
+      text-shadow: 2px 2px 0 rgba(255, 123, 156, 0.14);
+    }
+
+    .logo svg {
+      width: 38px;
+      height: 38px;
+      flex: 0 0 auto;
+      animation: wobbly 3.4s infinite ease-in-out;
+    }
+
+    .theme-switcher {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px;
+      border: 2px solid var(--soft-border);
+      border-radius: 999px;
+      background: var(--card-bg);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .theme-btn {
+      width: 28px;
+      height: 28px;
+      border: 2px solid rgba(74, 74, 74, 0.18);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .theme-btn:hover,
+    .theme-btn.active {
+      transform: translateY(-2px) scale(1.08);
+      border-color: var(--text-dark);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
+    }
+
+    .theme-btn[data-theme-value="pink"] { background: #FF7B9C; }
+    .theme-btn[data-theme-value="blue"] { background: #4D96FF; }
+    .theme-btn[data-theme-value="yellow"] { background: #FFD166; }
+    .theme-btn[data-theme-value="green"] { background: #2FBF71; }
+    .theme-btn[data-theme-value="dark"] {
+      background: linear-gradient(135deg, #15151F 0%, #15151F 48%, #FFD166 50%, #FFD166 100%);
+    }
+
+    .login-page {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.85fr);
+      align-items: center;
+      gap: 32px;
+      width: min(1120px, 100%);
+      min-height: calc(100vh - 78px);
+      margin: 0 auto;
+      padding: 44px 5% 58px;
+    }
+
+    .intro {
+      position: relative;
+      animation: slideInLeft 0.72s cubic-bezier(0.175, 0.885, 0.32, 1.15);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      padding: 7px 15px;
+      border: 2px dashed var(--primary);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--primary) 10%, var(--card-bg));
+      color: var(--primary);
+      font-family: 'Fredoka', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .intro h1 {
+      max-width: 610px;
+      margin-bottom: 14px;
+      color: var(--text-heading);
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(2.1rem, 6vw, 4.25rem);
+      line-height: 1.04;
+    }
+
+    .intro h1 span:nth-child(1) { color: var(--primary); }
+    .intro h1 span:nth-child(2) { color: var(--tertiary); }
+    .intro h1 span:nth-child(3) { color: var(--secondary); }
+
+    .intro p {
+      max-width: 530px;
+      margin-bottom: 24px;
+      color: var(--text-muted);
+      font-size: 1.08rem;
+      line-height: 1.65;
+    }
+
+    .feature-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .feature-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border: 1px solid var(--card-border);
+      border-radius: 999px;
+      background: var(--card-bg);
+      color: var(--text-dark);
+      font-weight: 800;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    }
+
+    .feature-pill i {
+      color: var(--primary);
+    }
+
+    .play-scene {
+      position: relative;
+      width: min(360px, 100%);
+      height: 180px;
+      margin-top: 34px;
+      border: 3px dashed var(--soft-border);
+      border-radius: 28px;
+      background:
+        linear-gradient(135deg, color-mix(in srgb, var(--secondary) 24%, transparent), color-mix(in srgb, var(--quaternary) 16%, transparent)),
+        var(--card-bg);
+      overflow: hidden;
+      box-shadow: 0 16px 34px rgba(74, 74, 74, 0.08);
+    }
+
+    .floating-item {
+      position: absolute;
+      display: grid;
+      place-items: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      color: #fff;
+      font-size: 1.35rem;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    .floating-item.book { left: 28px; top: 28px; background: var(--primary); animation: floatOne 3.6s ease-in-out infinite; }
+    .floating-item.pen { right: 42px; top: 34px; background: var(--quaternary); animation: floatTwo 3.9s ease-in-out infinite; }
+    .floating-item.star { left: 102px; bottom: 30px; background: var(--secondary); color: #8a5b00; animation: floatThree 3.4s ease-in-out infinite; }
+    .floating-item.check { right: 112px; bottom: 32px; background: var(--tertiary); animation: floatOne 4.2s ease-in-out infinite; }
+
+    .login-card {
+      position: relative;
+      width: 100%;
+      max-width: 430px;
+      justify-self: end;
+      padding: 28px;
+      border: 2px solid var(--card-border);
+      border-radius: 24px;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.62), transparent 58%),
+        var(--card-bg);
+      box-shadow: 0 18px 44px rgba(74, 74, 74, 0.12);
+      animation: fadeInRight 0.72s cubic-bezier(0.175, 0.885, 0.32, 1.15);
+    }
+
+    .login-card::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      z-index: -1;
+      border-radius: 24px;
+      background: var(--secondary);
+      transform: rotate(2.2deg);
+      opacity: 0.48;
+    }
+
+    .card-header {
+      margin-bottom: 22px;
+    }
+
+    .card-icon {
+      display: grid;
+      place-items: center;
+      width: 62px;
+      height: 62px;
+      margin-bottom: 14px;
+      border-radius: 20px;
+      background: color-mix(in srgb, var(--primary) 15%, var(--card-bg));
+      color: var(--primary);
+      font-size: 1.7rem;
+      box-shadow: inset 0 -5px 0 color-mix(in srgb, var(--primary) 16%, transparent);
+    }
+
+    .card-header h2 {
+      margin-bottom: 6px;
+      color: var(--text-heading);
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.75rem;
+      line-height: 1.2;
+    }
+
+    .card-header p {
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--text-dark);
+      font-weight: 800;
+    }
+
+    .input-wrap {
+      position: relative;
+    }
+
+    .input-wrap i {
+      position: absolute;
+      top: 50%;
+      left: 16px;
+      color: var(--text-muted);
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    input {
+      width: 100%;
+      min-height: 52px;
+      padding: 13px 16px 13px 46px;
+      border: 2px solid var(--card-border);
+      border-radius: 16px;
+      outline: none;
+      background: var(--card-inner);
+      color: var(--text-dark);
+      font: 700 1rem 'Nunito', sans-serif;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    }
+
+    input::placeholder {
+      color: color-mix(in srgb, var(--text-muted) 78%, transparent);
+    }
+
+    input:focus {
+      border-color: var(--primary);
+      background: var(--card-bg);
+      box-shadow: 0 0 0 5px var(--focus-ring);
+    }
+
+    .form-options {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin: 4px 0 18px;
+      color: var(--text-muted);
+      font-size: 0.94rem;
+      font-weight: 700;
+    }
+
+    .remember {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .remember input {
+      width: 18px;
+      min-height: 18px;
+      accent-color: var(--primary);
+    }
+
+    .forgot-link,
+    .register-link {
+      color: var(--primary);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .forgot-link:hover,
+    .register-link:hover {
+      color: var(--primary-hover);
+      text-decoration: underline;
+    }
+
+    .login-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      min-height: 52px;
+      margin-bottom: 18px;
+      border: 0;
+      border-radius: 16px;
+      background: var(--primary);
+      color: #FFFFFF;
+      cursor: pointer;
+      font: 800 1rem 'Nunito', sans-serif;
+      box-shadow: 0 5px 0 var(--primary-shadow);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+    }
+
+    .login-btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(2px);
+      box-shadow: 0 3px 0 var(--primary-shadow);
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 18px 0;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 2px;
+      border-radius: 99px;
+      background: var(--card-border);
+    }
+
+    .google-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      min-height: 50px;
+      border: 2px solid var(--card-border);
+      border-radius: 16px;
+      background: var(--card-bg);
+      color: var(--text-dark);
+      cursor: pointer;
+      font: 800 0.98rem 'Nunito', sans-serif;
+      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .google-btn:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(74, 74, 74, 0.1);
+    }
+
+    .signup-note {
+      margin-top: 18px;
+      color: var(--text-muted);
+      text-align: center;
+      font-weight: 700;
+    }
+
+    @keyframes wobbly {
+      0%, 100% { transform: rotate(0deg) scale(1); }
+      25% { transform: rotate(-7deg) scale(1.04); }
+      75% { transform: rotate(7deg) scale(0.97); }
+    }
+
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-36px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(36px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes floatOne {
+      0%, 100% { transform: translateY(0) rotate(-5deg); }
+      50% { transform: translateY(-12px) rotate(4deg); }
+    }
+
+    @keyframes floatTwo {
+      0%, 100% { transform: translateY(0) rotate(7deg); }
+      50% { transform: translateY(-10px) rotate(-7deg); }
+    }
+
+    @keyframes floatThree {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-9px) scale(1.08); }
+    }
+
+    @media (max-width: 900px) {
+      .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 14px 5%;
+      }
+
+      .login-page {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding-top: 30px;
+      }
+
+      .intro {
+        text-align: center;
+      }
+
+      .intro p,
+      .play-scene {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .feature-row {
+        justify-content: center;
+      }
+
+      .login-card {
+        justify-self: center;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .theme-switcher {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .login-page {
+        padding: 24px 4% 42px;
+      }
+
+      .login-card {
+        padding: 22px 18px;
+        border-radius: 20px;
+      }
+
+      .form-options {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .play-scene {
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar" aria-label="Navigasi utama">
+    <a href="#" class="logo" aria-label="givankibooks">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M15,80 Q15,17 50,17 T85,17 V80 Q85,17 50,24 T15,80" fill="#2FBF71" stroke="#4A4A4A" stroke-width="4"/>
+        <path d="M50,17 V82" stroke="#4A4A4A" stroke-width="4"/>
+        <path d="M20,78 Q20,24 50,24" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+        <circle cx="35" cy="42" r="4" fill="#222222"/>
+        <circle cx="65" cy="42" r="4" fill="#222222"/>
+        <path d="M43,55 Q50,61 57,55" fill="none" stroke="#222222" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      givankibooks
+    </a>
+
+    <div class="theme-switcher" aria-label="Pilih tema warna">
+      <button type="button" class="theme-btn active" data-theme-value="pink" aria-label="Tema pink"></button>
+      <button type="button" class="theme-btn" data-theme-value="blue" aria-label="Tema biru"></button>
+      <button type="button" class="theme-btn" data-theme-value="yellow" aria-label="Tema kuning"></button>
+      <button type="button" class="theme-btn" data-theme-value="green" aria-label="Tema hijau"></button>
+      <button type="button" class="theme-btn" data-theme-value="dark" aria-label="Dark mode"></button>
+    </div>
+  </nav>
+
+  <main class="login-page">
+    <section class="intro" aria-labelledby="login-title">
+      <div class="badge">
+        <i class="fa-solid fa-shapes" aria-hidden="true"></i>
+        Worksheet edukatif anak
+      </div>
+      <h1 id="login-title">
+        Masuk ke <span>givanki</span><span>books</span> dan lanjut <span>belajar</span>
+      </h1>
+      <p>
+        Akses koleksi worksheet, aktivitas kreatif, dan materi belajar anak dengan suasana yang ceria, rapi, dan mudah digunakan.
+      </p>
+      <div class="feature-row" aria-label="Fitur utama">
+        <span class="feature-pill"><i class="fa-solid fa-book-open" aria-hidden="true"></i> 2.000+ worksheet</span>
+        <span class="feature-pill"><i class="fa-solid fa-palette" aria-hidden="true"></i> Tema ceria</span>
+        <span class="feature-pill"><i class="fa-solid fa-child-reaching" aria-hidden="true"></i> Usia 5+ tahun</span>
+      </div>
+
+      <div class="play-scene" aria-hidden="true">
+        <span class="floating-item book"><i class="fa-solid fa-book-open"></i></span>
+        <span class="floating-item pen"><i class="fa-solid fa-pencil"></i></span>
+        <span class="floating-item star"><i class="fa-solid fa-star"></i></span>
+        <span class="floating-item check"><i class="fa-solid fa-check"></i></span>
+      </div>
+    </section>
+
+    <section class="login-card" aria-label="Form login givankibooks">
+      <div class="card-header">
+        <div class="card-icon">
+          <i class="fa-solid fa-unlock-keyhole" aria-hidden="true"></i>
+        </div>
+        <h2>Selamat datang</h2>
+        <p>Masuk untuk membuka ruang belajar givankibooks.</p>
+      </div>
+
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <div class="input-wrap">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <input type="email" id="email" name="email" placeholder="nama@email.com" autocomplete="email" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="input-wrap">
+            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+            <input type="password" id="password" name="password" placeholder="Masukkan password" autocomplete="current-password" required>
+          </div>
+        </div>
+
+        <div class="form-options">
+          <label class="remember" for="remember">
+            <input type="checkbox" id="remember" name="remember">
+            Ingat saya
+          </label>
+          <a class="forgot-link" href="#">Lupa password?</a>
+        </div>
+
+        <button type="submit" class="login-btn">
+          Login
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </button>
+
+        <!-- <div class="divider">atau</div> -->
+
+        <!-- <button type="button" class="google-btn">
+          <i class="fa-brands fa-google" aria-hidden="true"></i>
+          Masuk dengan Google
+        </button> -->
+
+        <!-- <p class="signup-note">
+          Belum punya akun? <a class="register-link" href="#">Daftar sekarang</a>
+        </p> -->
+      </form>
+    </section>
+  </main>
+
+  <script>
+    const themeButtons = document.querySelectorAll('.theme-btn');
+    const savedTheme = localStorage.getItem('givanki-theme') || 'pink';
+
+    function setTheme(theme) {
+      document.body.dataset.theme = theme;
+      localStorage.setItem('givanki-theme', theme);
+      themeButtons.forEach((button) => {
+        button.classList.toggle('active', button.dataset.themeValue === theme);
+      });
+    }
+
+    themeButtons.forEach((button) => {
+      button.addEventListener('click', () => setTheme(button.dataset.themeValue));
+    });
+
+    setTheme(savedTheme);
+  </script>
+</body>
+</html>
